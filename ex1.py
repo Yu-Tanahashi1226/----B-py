@@ -67,6 +67,7 @@ for i in NON_FACE_KEYPOINT_INDICES:
     cv2.circle(img, center, 5, (0, 255, 255), thickness=-1)
 
 
+
 cv2.imshow("Task 1: Pose Estimation Result", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
