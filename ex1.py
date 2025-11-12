@@ -62,8 +62,7 @@ for i in NON_FACE_KEYPOINT_INDICES:
     if x * y == 0:
         continue
 
-    center = (int(x.item()), int(y.item()))
-    
+    center = (int(x.item()), int(y.item()))    
     cv2.circle(img, center, 5, (0, 255, 255), thickness=-1)
 
 
