@@ -54,7 +54,7 @@ while cap.isOpened():
                     frame,
                     start_point,
                     end_point,
-                    (0, 255, 0),
+                    (0, 0, 255),
                     thickness=3,
                 )
 
@@ -67,7 +67,7 @@ while cap.isOpened():
 
                 center = (int(x.item()), int(y.item()))
                 
-                cv2.circle(frame, center, 5, (0, 0, 255), thickness=-1)
+                cv2.circle(frame, center, 5, (0, 255, 255), thickness=-1)
 
         cv2.imshow("Task 2: Video Pose Estimation", frame)
         
