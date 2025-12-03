@@ -81,11 +81,8 @@ while True:
     ret1, frame1 = cap1.read()
     ret2, frame2 = cap2.read()
     
-    if not ret2:
+    if not ret1 or not ret2:
         break
-
-    if not ret1:
-        frame1 = np.zeros_like(frame2)
     
     target_size = (1000, 1000)
     frame1 = cv2.resize(frame1, target_size)
