@@ -11,8 +11,6 @@ pts1 = np.array([
     [1157, 424]    # ペナルティエリア下角
 ], dtype=np.float32)
 
-# 3. 出力画像(soccer_field.png)上の対応点
-# 右ペナルティエリアの同じ位置
 pts2 = np.array([
     [3140, 227],   # ペナルティエリア上角
     [2723, 575],   # サイドライン側上
@@ -20,7 +18,6 @@ pts2 = np.array([
     [2721, 1625]    # ペナルティエリア下角
 ], dtype=np.float32)
 
-# 4. 射影変換行列
 M = cv2.getPerspectiveTransform(pts1, pts2)
 np.set_printoptions(precision=5, suppress=True)
 print(M)
