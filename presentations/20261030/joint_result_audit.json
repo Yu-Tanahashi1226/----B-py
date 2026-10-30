@@ -1,0 +1,136 @@
+{
+  "model_inference_rerun": false,
+  "original_outputs_modified": false,
+  "total_proposals": 65,
+  "groups": 34,
+  "before_after_count_available": 11,
+  "all_context_fields_available": 9,
+  "full_context_group_ids": [
+    2,
+    3,
+    4,
+    11,
+    16,
+    22,
+    23,
+    24,
+    32
+  ],
+  "incomplete_context_group_ids": [
+    7,
+    8
+  ],
+  "not_an_accuracy_measure": true,
+  "case11_trace": [
+    {
+      "time_sec": 154.5,
+      "count": {
+        "balls": 0,
+        "strikes": 2,
+        "outs": 1
+      },
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      },
+      "scoreboard": {
+        "inning": 5,
+        "half": "bottom",
+        "upper_score": 0,
+        "lower_score": 0,
+        "raw": {
+          "inning": "5ウラ",
+          "upper_score": "0",
+          "lower_score": "0"
+        }
+      }
+    },
+    {
+      "time_sec": 158.0,
+      "count": {
+        "balls": 0,
+        "strikes": 2,
+        "outs": 1
+      },
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      },
+      "scoreboard": null
+    },
+    {
+      "time_sec": 158.5,
+      "count": {
+        "balls": 0,
+        "strikes": 2,
+        "outs": 1
+      },
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      },
+      "scoreboard": {
+        "inning": 5,
+        "half": "bottom",
+        "upper_score": 0,
+        "lower_score": 0,
+        "raw": {
+          "inning": "5ウラ",
+          "upper_score": "0",
+          "lower_score": "0"
+        }
+      }
+    },
+    {
+      "time_sec": 159.0,
+      "count": null,
+      "runners": null,
+      "scoreboard": null
+    },
+    {
+      "time_sec": 161.5,
+      "count": {
+        "balls": 1,
+        "strikes": 2,
+        "outs": 1
+      },
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      },
+      "scoreboard": {
+        "inning": 5,
+        "half": "bottom",
+        "upper_score": 0,
+        "lower_score": 0,
+        "raw": {
+          "inning": "5ウラ",
+          "upper_score": "0",
+          "lower_score": "0"
+        }
+      }
+    },
+    {
+      "time_sec": 162.0,
+      "count": {
+        "balls": 1,
+        "strikes": 2,
+        "outs": 1
+      },
+      "runners": {
+        "first": false,
+        "second": false,
+        "third": false
+      },
+      "scoreboard": null
+    }
+  ],
+  "first_stable_post_run": "158.0-158.5 seconds: B0 S2 O1",
+  "later_stable_post_run": "161.5 seconds onward: B1 S2 O1",
+  "interpretation": "The original first-stable-state rule retains two unchanged-two-strike candidates; candidate11 has a later conflicting ball-count observation. This is a retrospective consistency check, not a confirmed foul/ball classification.",
+  "definition": "Among the 34 display groups, 11 have before/after BSO. The 9 full-context groups have non-null inning, half, both scores, and all three runner-state fields in both selected states. Availability is not correctness."
+}
