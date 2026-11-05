@@ -1,0 +1,27 @@
+{
+  "positive_fixture_scenes": 10,
+  "matched": 10,
+  "maximum_offset_error_sec": 1.1368683772161603e-13,
+  "fixture_resolution": [
+    640,
+    360
+  ],
+  "fixture_duration_sec": 388.93333333333334,
+  "fixture_description": "The ten reference clips resized/recompressed to640x360 and concatenated with a2.3s prefix and0.9s gaps. Not test.mp4.",
+  "source_sha256": "e071ea5aa1dcab28d17c60c1c3d03606d4605b515860b25beab84e0cf23eedf3",
+  "real_video_check": {
+    "source": "5ura.mp4",
+    "matched": 1,
+    "absent_references_rejected": 9
+  },
+  "real_analysis": {
+    "events": 3,
+    "selected_by_count": 2,
+    "encoded_clips": 53,
+    "outside_selected_events": 0,
+    "blanket_whole_video_encoder": false,
+    "classifier_excludes_target_reference": true,
+    "confirmed_fouls": null,
+    "warning": "Only 24 approximate training labels. Prototype outcome classification requires visual review."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source": {
+    "source_sha256": "e071ea5aa1dcab28d17c60c1c3d03606d4605b515860b25beab84e0cf23eedf3",
+    "period_sec": 0.5,
+    "descriptor": "gray_grid_32x18_centered_v1",
+    "frames": 11668,
+    "fps": 30.0,
+    "duration_sec": 388.93333333333334,
+    "width": 640,
+    "height": 360
+  },
+  "requested": 10,
+  "matched": 10,
+  "ambiguous": 0,
+  "not_found": 0,
+  "elapsed_sec": 210.36648321000393,
+  "method": "Ordered visual reference matching; these scores measure matching, not foul probability."
+}

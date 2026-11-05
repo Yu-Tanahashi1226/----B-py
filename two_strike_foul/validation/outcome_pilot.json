@@ -1,0 +1,187 @@
+{
+  "samples": 24,
+  "positive": 15,
+  "negative": 9,
+  "confusion_matrix_true_rows_predicted_columns": [
+    [
+      5,
+      4
+    ],
+    [
+      3,
+      12
+    ]
+  ],
+  "balanced_accuracy": 0.6777777777777778,
+  "predictions": [
+    {
+      "reference": "1urafaul1.mp4",
+      "pitch_index": 1,
+      "approximate_label": true,
+      "out_of_reference_score": 0.5147774668510927,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "1urafaul1.mp4",
+      "pitch_index": 2,
+      "approximate_label": false,
+      "out_of_reference_score": 0.5007913623168123,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "2omotefaul2.mp4",
+      "pitch_index": 1,
+      "approximate_label": true,
+      "out_of_reference_score": 0.5065152404582127,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "2omotefaul2.mp4",
+      "pitch_index": 2,
+      "approximate_label": true,
+      "out_of_reference_score": 0.5028835842159096,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "2omotefaul2.mp4",
+      "pitch_index": 3,
+      "approximate_label": true,
+      "out_of_reference_score": 0.4938040115539154,
+      "out_of_reference_decision": false
+    },
+    {
+      "reference": "2urafaul3.mp4",
+      "pitch_index": 1,
+      "approximate_label": true,
+      "out_of_reference_score": 0.5093390986752846,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "2urafaul3.mp4",
+      "pitch_index": 2,
+      "approximate_label": false,
+      "out_of_reference_score": 0.5043136124521109,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "4omotefaul4.mp4",
+      "pitch_index": 1,
+      "approximate_label": true,
+      "out_of_reference_score": 0.5016662490289314,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "4omotefaul4.mp4",
+      "pitch_index": 2,
+      "approximate_label": true,
+      "out_of_reference_score": 0.49938883854088273,
+      "out_of_reference_decision": false
+    },
+    {
+      "reference": "4omotefaul4.mp4",
+      "pitch_index": 3,
+      "approximate_label": false,
+      "out_of_reference_score": 0.4872358650097425,
+      "out_of_reference_decision": false
+    },
+    {
+      "reference": "4urafaul5.mp4",
+      "pitch_index": 1,
+      "approximate_label": true,
+      "out_of_reference_score": 0.5120594613778311,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "4urafaul5.mp4",
+      "pitch_index": 2,
+      "approximate_label": false,
+      "out_of_reference_score": 0.4984765285669899,
+      "out_of_reference_decision": false
+    },
+    {
+      "reference": "5omotefaul6.mp4",
+      "pitch_index": 1,
+      "approximate_label": true,
+      "out_of_reference_score": 0.5103184246020223,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "5omotefaul6.mp4",
+      "pitch_index": 2,
+      "approximate_label": false,
+      "out_of_reference_score": 0.5100555014766549,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "5omotefaul7.mp4",
+      "pitch_index": 1,
+      "approximate_label": true,
+      "out_of_reference_score": 0.5056532707430673,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "5omotefaul7.mp4",
+      "pitch_index": 2,
+      "approximate_label": true,
+      "out_of_reference_score": 0.514837148140436,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "5omotefaul7.mp4",
+      "pitch_index": 3,
+      "approximate_label": false,
+      "out_of_reference_score": 0.5017692196549199,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "5urafaul8.mp4",
+      "pitch_index": 1,
+      "approximate_label": true,
+      "out_of_reference_score": 0.507452897235238,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "5urafaul8.mp4",
+      "pitch_index": 2,
+      "approximate_label": true,
+      "out_of_reference_score": 0.5098220271326109,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "5urafaul8.mp4",
+      "pitch_index": 3,
+      "approximate_label": false,
+      "out_of_reference_score": 0.4953682809604274,
+      "out_of_reference_decision": false
+    },
+    {
+      "reference": "7urafaul9.mp4",
+      "pitch_index": 1,
+      "approximate_label": true,
+      "out_of_reference_score": 0.4903370510282413,
+      "out_of_reference_decision": false
+    },
+    {
+      "reference": "7urafaul9.mp4",
+      "pitch_index": 2,
+      "approximate_label": false,
+      "out_of_reference_score": 0.48975761388923644,
+      "out_of_reference_decision": false
+    },
+    {
+      "reference": "8urafaul10.mp4",
+      "pitch_index": 1,
+      "approximate_label": true,
+      "out_of_reference_score": 0.5141113556346208,
+      "out_of_reference_decision": true
+    },
+    {
+      "reference": "8urafaul10.mp4",
+      "pitch_index": 2,
+      "approximate_label": false,
+      "out_of_reference_score": 0.4865112193173913,
+      "out_of_reference_decision": false
+    }
+  ],
+  "limitation": "Approximate labels, only 24 pitches from one game. Leave-one-reference-out, not leave-one-game-out. Threshold 0.5 and C=1 were fixed before evaluation."
+}

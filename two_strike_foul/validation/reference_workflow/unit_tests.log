@@ -1,0 +1,40 @@
+test_ball_changed (test_gate.GateTests.test_ball_changed) ... ok
+test_clip_range_never_crosses_selected_window (test_gate.GateTests.test_clip_range_never_crosses_selected_window) ... ok
+test_delayed_update_does_not_select_early_unchanged_display (test_gate.GateTests.test_delayed_update_does_not_select_early_unchanged_display) ... ok
+test_empty_gate_does_not_import_models (test_gate.GateTests.test_empty_gate_does_not_import_models) ... ok
+test_following_pitch_is_explicit_and_separate (test_gate.GateTests.test_following_pitch_is_explicit_and_separate) ... ok
+test_foul_score_is_not_fabricated_from_gate (test_gate.GateTests.test_foul_score_is_not_fabricated_from_gate) ... ok
+test_full_video_mode_is_rejected (test_gate.GateTests.test_full_video_mode_is_rejected) ... ok
+test_insufficient_pre_count_remains_unknown (test_gate.GateTests.test_insufficient_pre_count_remains_unknown) ... ok
+test_missing_ocr_does_not_fabricate_context (test_gate.GateTests.test_missing_ocr_does_not_fabricate_context) ... ok
+test_no_disappearance (test_gate.GateTests.test_no_disappearance) ... ok
+test_not_two_strikes (test_gate.GateTests.test_not_two_strikes) ... ok
+test_only_equal_two_strike_gate (test_gate.GateTests.test_only_equal_two_strike_gate) ... ok
+test_out_and_bs_reset (test_gate.GateTests.test_out_and_bs_reset) ... ok
+test_oversized_sampling_gap_is_not_real_absence (test_gate.GateTests.test_oversized_sampling_gap_is_not_real_absence) ... ok
+test_runner_change_excludes_candidate (test_gate.GateTests.test_runner_change_excludes_candidate) ... ok
+test_short_post_period_is_not_reported_as_proven_annotation_failure (test_gate.GateTests.test_short_post_period_is_not_reported_as_proven_annotation_failure) ... ok
+test_single_missing_sample_is_not_disappearance (test_gate.GateTests.test_single_missing_sample_is_not_disappearance) ... ok
+test_unselected_parent_is_rejected (test_gate.GateTests.test_unselected_parent_is_rejected) ... ok
+test_unsupported_layout_is_not_absence (test_gate.GateTests.test_unsupported_layout_is_not_absence) ... ok
+test_venv_python_symlink_is_preserved (test_gate.GateTests.test_venv_python_symlink_is_preserved) ... ok
+test_visible_but_unreadable_is_not_absence (test_gate.GateTests.test_visible_but_unreadable_is_not_absence) ... ok
+test_zero_detections_is_unknown_not_zero_count (test_gate.GateTests.test_zero_detections_is_unknown_not_zero_count) ... ok
+test_constant_on_screen_two_strike_count_is_eligible (test_reference_workflow.CountGateTests.test_constant_on_screen_two_strike_count_is_eligible) ... ok
+test_following_pitch_does_not_change_this_pitch_post_comparison (test_reference_workflow.CountGateTests.test_following_pitch_does_not_change_this_pitch_post_comparison) ... ok
+test_late_ball_update_excludes_earlier_unchanged_value (test_reference_workflow.CountGateTests.test_late_ball_update_excludes_earlier_unchanged_value) ... ok
+test_missing_post_count_remains_unknown (test_reference_workflow.CountGateTests.test_missing_post_count_remains_unknown) ... ok
+test_not_two_strikes (test_reference_workflow.CountGateTests.test_not_two_strikes) ... ok
+test_outcome_head_rejects_target_reference_leakage (test_reference_workflow.CountGateTests.test_outcome_head_rejects_target_reference_leakage) ... ok
+test_persistent_out_drop_is_not_silently_corrected (test_reference_workflow.CountGateTests.test_persistent_out_drop_is_not_silently_corrected) ... ok
+test_temporary_out_drop_requires_known_half_and_returned_count (test_reference_workflow.CountGateTests.test_temporary_out_drop_requires_known_half_and_returned_count) ... ok
+test_unknown_count_never_starts_new_videomae_worker_models (test_reference_workflow.CountGateTests.test_unknown_count_never_starts_new_videomae_worker_models) ... ok
+test_unknown_inning_prevents_out_drop_filter (test_reference_workflow.CountGateTests.test_unknown_inning_prevents_out_drop_filter) ... ok
+test_absent_scene_is_not_fabricated (test_reference_workflow.RetrievalTests.test_absent_scene_is_not_fabricated) ... ok
+test_replayed_duplicate_is_ambiguous (test_reference_workflow.RetrievalTests.test_replayed_duplicate_is_ambiguous) ... ok
+test_unknown_offset_and_reencoding (test_reference_workflow.RetrievalTests.test_unknown_offset_and_reencoding) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.716s
+
+OK

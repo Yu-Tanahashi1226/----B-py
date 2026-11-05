@@ -1,0 +1,10 @@
+{
+  "events": 2,
+  "selected_by_count": 1,
+  "encoded_clips": 26,
+  "outside_selected_events": 0,
+  "blanket_whole_video_encoder": false,
+  "classifier_excludes_target_reference": true,
+  "confirmed_fouls": null,
+  "warning": "Only 24 approximate training labels. Prototype outcome classification requires visual review."
+}

@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "annotation_source": "Previous assistant visual review; approximate, not independently verified user ground truth.",
+  "references": [
+    {
+      "filename": "1urafaul1.mp4",
+      "sha256": "3cfeba5de6673e420de6e4346f295ff7d016cf98ae08eace160b893bbe7d252f",
+      "duration_sec": 20.966666666666665,
+      "fps": 30.0,
+      "events": [
+        {
+          "pitch_index": 1,
+          "start_sec": 1.5666666666666667,
+          "end_sec": 4.333333333333333,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Pitcher already in motion at wide-shot cut; actual motion onset is not visible. Full swing and subsequent foul-side camera view; same batter continues at 0-2."
+        },
+        {
+          "pitch_index": 2,
+          "start_sec": 16.666666666666668,
+          "end_sec": 19.533333333333335,
+          "approximate_foul_label": false,
+          "pre_strikes": 2,
+          "notes": "Batter does not swing and catcher receives the pitch. Exact ball/strike call is not established from the clip."
+        }
+      ]
+    },
+    {
+      "filename": "2omotefaul2.mp4",
+      "sha256": "6dfa3c748df33d375c349d24c89699f82deb83bb483c2708ce9ffa94006dcecc",
+      "duration_sec": 64.2,
+      "fps": 30.0,
+      "events": [
+        {
+          "pitch_index": 1,
+          "start_sec": 3.566666666666667,
+          "end_sec": 5.9,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Full swing, then same batter continues at 1 ball and 2 strikes. Contact trajectory is not resolved; foul is inferred from the swing and unchanged count/plate appearance."
+        },
+        {
+          "pitch_index": 2,
+          "start_sec": 33.13333333333333,
+          "end_sec": 35.6,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Swing followed by a camera view toward the first-base foul side. Same batter continues at 1 ball and 2 strikes."
+        },
+        {
+          "pitch_index": 3,
+          "start_sec": 56.36666666666667,
+          "end_sec": 58.56666666666667,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Ground ball near the first-base line; base umpire raises both hands to signal foul/dead ball at about 60.2-60.6 seconds. Do not classify this as a fair ball from the initial ground-ball view alone."
+        }
+      ]
+    },
+    {
+      "filename": "2urafaul3.mp4",
+      "sha256": "e2209aef356be2d176f292f0e2fb389b6aa16528f87d15f5b4d752ccbbf07fa9",
+      "duration_sec": 25.566666666666666,
+      "fps": 30.0,
+      "events": [
+        {
+          "pitch_index": 1,
+          "start_sec": 1.4333333333333333,
+          "end_sec": 4.7,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Full swing, followed by the same batter continuing at 2 balls and 2 strikes. The ball path/contact is not resolved; foul is inferred from the swing and unchanged count/plate appearance."
+        },
+        {
+          "pitch_index": 2,
+          "start_sec": 17.133333333333333,
+          "end_sec": 20.433333333333334,
+          "approximate_foul_label": false,
+          "pre_strikes": 2,
+          "notes": "Batted ground ball is fielded in the infield and a play continues at first base. Visually judged an in-play fair ground ball, not a foul; the final out/safe call is not annotated."
+        }
+      ]
+    },
+    {
+      "filename": "4omotefaul4.mp4",
+      "sha256": "5b0ed8b40e5a060579b866562fcfa594f95a0fb6214a5cf041a9d7817e3d5b53",
+      "duration_sec": 57.7,
+      "fps": 30.0,
+      "events": [
+        {
+          "pitch_index": 1,
+          "start_sec": 4.833333333333333,
+          "end_sec": 7.233333333333333,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Short bat movement near the pitch, then plate umpire raises both hands for foul/dead ball around 7.4-8.2 seconds. Same batter continues at 0-2. Ball-to-bat contact is not resolved from the sampled frames."
+        },
+        {
+          "pitch_index": 2,
+          "start_sec": 24.466666666666665,
+          "end_sec": 26.833333333333332,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Swing followed by a camera view of the first-base foul side and a dead-ball/foul gesture from the base umpire. Same batter continues; visible count remains 0-2."
+        },
+        {
+          "pitch_index": 3,
+          "start_sec": 49.43333333333333,
+          "end_sec": 51.833333333333336,
+          "approximate_foul_label": false,
+          "pre_strikes": 2,
+          "notes": "Ground ball is fielded in the infield and thrown to first base. First-base umpire raises one arm in an out signal around 56.8 seconds. Visually judged a fair in-play ground ball. Count overlay is absent during the delivery, so pre-pitch count is inferred from surrounding footage."
+        }
+      ]
+    },
+    {
+      "filename": "4urafaul5.mp4",
+      "sha256": "d0b5bb3556814d57a5e106c271fba1dcb3f6407f7dadcd229704fe78545cee21",
+      "duration_sec": 21.533333333333335,
+      "fps": 30.0,
+      "events": [
+        {
+          "pitch_index": 1,
+          "start_sec": 0.6333333333333333,
+          "end_sec": 3.7333333333333334,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Swing followed by camera tracking toward the spectator stands. The same batter continues at 2 balls and 2 strikes. Visually judged a two-strike foul; not a model foul prediction."
+        },
+        {
+          "pitch_index": 2,
+          "start_sec": 16.633333333333333,
+          "end_sec": 19.433333333333334,
+          "approximate_foul_label": false,
+          "pre_strikes": 2,
+          "notes": "At the camera cut (frame 499), the pitcher is already holding his lifted leg; actual delivery onset is not visible. Batter does not swing, catcher receives the pitch. Visually judged not a foul. Exact ball/strike call is unresolved in the available clip."
+        }
+      ]
+    },
+    {
+      "filename": "5omotefaul6.mp4",
+      "sha256": "58f24ad08b6dddeb1e26d01f4b77291607b0c8428893d07fca6e5da1bceb6e7e",
+      "duration_sec": 27.966666666666665,
+      "fps": 30.0,
+      "events": [
+        {
+          "pitch_index": 1,
+          "start_sec": 1.4333333333333333,
+          "end_sec": 3.6333333333333333,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Swing followed by view toward first-base foul territory. The same batter continues at 1 ball and 2 strikes. Visually judged a two-strike foul from the swing, following play and continued plate appearance; not a model foul prediction."
+        },
+        {
+          "pitch_index": 2,
+          "start_sec": 23.833333333333332,
+          "end_sec": 26.133333333333333,
+          "approximate_foul_label": false,
+          "pre_strikes": 2,
+          "notes": "Batter moves/retracts the bat and catcher receives the low pitch. Scoreboard changes from 1 ball and 2 strikes before delivery to 2 balls and 2 strikes at 27.8 seconds. Visually judged a called ball, not a foul; ball/strike decision is established from the scoreboard change."
+        }
+      ]
+    },
+    {
+      "filename": "5omotefaul7.mp4",
+      "sha256": "f1cc76084f3aed204a0fe1b2625ae225607e69e83bcdc7f7a6f060c85735b4b1",
+      "duration_sec": 54.166666666666664,
+      "fps": 30.0,
+      "events": [
+        {
+          "pitch_index": 1,
+          "start_sec": 0.1,
+          "end_sec": 2.2666666666666666,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Swing and following foul/dead-ball action. Same batter continues with scoreboard still at 1 ball and 2 strikes. Visually judged an uncaught two-strike foul, with the plate appearance continuing."
+        },
+        {
+          "pitch_index": 2,
+          "start_sec": 24.666666666666668,
+          "end_sec": 26.833333333333332,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Swing followed by a camera view of foul territory near the first-base line and spectator stands. Same batter continues at 1 ball and 2 strikes. Visually judged an uncaught two-strike foul."
+        },
+        {
+          "pitch_index": 3,
+          "start_sec": 45.666666666666664,
+          "end_sec": 48.03333333333333,
+          "approximate_foul_label": false,
+          "pre_strikes": 2,
+          "notes": "Pop-up behind home plate into foul territory. Catcher tracks it, catches it near 52 seconds and then takes the ball out of the glove. Visually judged a caught foul fly for an out; recorded separately from an uncaught foul that extends the plate appearance. Post-play count display is not visible."
+        }
+      ]
+    },
+    {
+      "filename": "5urafaul8.mp4",
+      "sha256": "18ad6acea335d4e09856ec884236f968db6c4c885b43fa8766fc2825a327bf3c",
+      "duration_sec": 57.36666666666667,
+      "fps": 30.0,
+      "events": [
+        {
+          "pitch_index": 1,
+          "start_sec": 9.866666666666667,
+          "end_sec": 12.9,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "First visible main-angle frame is frame 296 (9.867 seconds), with the pitcher already lifting his leg; true delivery onset is off-camera. Full swing followed by the same batter continuing with the count still at 0 balls and 2 strikes. Visually judged an uncaught two-strike foul."
+        },
+        {
+          "pitch_index": 2,
+          "start_sec": 32.06666666666667,
+          "end_sec": 35.333333333333336,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Full swing, then plate umpire raises both hands for foul/dead ball around 35.6-36.4 seconds. Same batter continues at 0 balls and 2 strikes. Visually judged an uncaught two-strike foul."
+        },
+        {
+          "pitch_index": 3,
+          "start_sec": 52.03333333333333,
+          "end_sec": 55.13333333333333,
+          "approximate_foul_label": false,
+          "pre_strikes": 2,
+          "notes": "Batter does not swing; catcher blocks a low pitch in/near the dirt and retrieves the ball. Visually judged not a foul. Post-pitch scoreboard disappears, and the available clip does not establish the exact ball/strike call; leave the call unresolved."
+        }
+      ]
+    },
+    {
+      "filename": "7urafaul9.mp4",
+      "sha256": "43e9414cc7f04472adf601a950dd303015cd1397b49ff39f857703c70ba2836c",
+      "duration_sec": 25.266666666666666,
+      "fps": 30.0,
+      "events": [
+        {
+          "pitch_index": 1,
+          "start_sec": 0.5333333333333333,
+          "end_sec": 3.566666666666667,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Full swing followed by catcher/umpire following foul-side action. Same batter continues at 2 balls and 2 strikes. Visually judged an uncaught two-strike foul; ball-to-bat contact is not resolved precisely from the sampled frames."
+        },
+        {
+          "pitch_index": 2,
+          "start_sec": 15.666666666666666,
+          "end_sec": 18.4,
+          "approximate_foul_label": false,
+          "pre_strikes": 2,
+          "notes": "Batted ball goes through fair territory beyond a diving infielder; an outfielder gathers the low ball on the grass around 22 seconds and returns it. Visually judged a fair in-play batted ball, not a foul. Official hit/error scoring and final base reached are not annotated."
+        }
+      ]
+    },
+    {
+      "filename": "8urafaul10.mp4",
+      "sha256": "51e0a7bd13ceb0deb204ba08a58b52e396424572929b275c062e6da89b0cc37a",
+      "duration_sec": 23.8,
+      "fps": 30.0,
+      "events": [
+        {
+          "pitch_index": 1,
+          "start_sec": 0.23333333333333334,
+          "end_sec": 3.3666666666666667,
+          "approximate_foul_label": true,
+          "pre_strikes": 2,
+          "notes": "Full swing followed by catcher and umpire following the foul-side action. Same batter continues with 2 balls and 2 strikes. Visually judged an uncaught two-strike foul; precise ball-to-bat contact is not resolved in the sampled frames."
+        },
+        {
+          "pitch_index": 2,
+          "start_sec": 13.066666666666666,
+          "end_sec": 16.1,
+          "approximate_foul_label": false,
+          "pre_strikes": 2,
+          "notes": "Camera returns at frame 392 (13.0667 s), with the initial leg-lift already beginning; true motion onset is off-camera. Batted ball goes into fair left-field territory; an outfielder makes a diving/sliding fielding attempt around 18.8-19.0 s. The clip supports fair in-play ball, but clean catch versus short hop and the official out/safe result are not assigned."
+        }
+      ]
+    }
+  ]
+}

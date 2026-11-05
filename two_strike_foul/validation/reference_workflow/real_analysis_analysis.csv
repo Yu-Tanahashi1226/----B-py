@@ -1,0 +1,4 @@
+﻿event_id,reference,pitch_index,start_sec,end_sec,status,count_gate_reason,before_balls,before_strikes,before_outs,after_balls,after_strikes,after_outs,model_start_sec,model_end_sec,pitch_model_score,foul_model_score,foul_model_decision,review_required,candidate_clip
+1,5urafaul8.mp4,1,112.5,115.53333333333335,model_supported_foul_candidate,two_strikes_bso_unchanged,0,2,1,0,2,1,113.4434944152832,114.9929677327474,0.9680145382881165,0.5083347145162905,True,True,foul_candidates/5urafaul8__pitch01_review.mp4
+2,5urafaul8.mp4,2,134.70000000000002,137.96666666666667,model_supported_foul_candidate,two_strikes_bso_unchanged,0,2,1,0,2,1,135.78821716308593,137.61459681193034,0.9446473121643066,0.5092179071015043,True,True,foul_candidates/5urafaul8__pitch02_review.mp4
+3,5urafaul8.mp4,3,154.66666666666669,157.76666666666668,bso_changed_or_delayed_update,bso_changed_or_delayed_update,0,2,1,1,2,1,,,,,,True,

@@ -75,6 +75,10 @@ def diagnostic_tasks(rows, maximum=40):
             reasons.append('low_confidence_inner_detection')
         if index and index+1 < len(rows):
             previous, following = rows[index-1], rows[index+1]
+            if visible and previous.get('count') and row.get('count') and row['count']['outs']<previous['count']['outs']:
+                a,b=previous.get('scoreboard') or {},row.get('scoreboard') or {}
+                if all(a.get(k) is not None and a.get(k)==b.get(k) for k in ['inning','half']):
+                    reasons.append('out_count_decreased_within_same_half_check_lamp_miss')
             if previous.get('count') and previous.get('count') == following.get('count') and row.get('count') != previous['count']:
                 reasons.append('bso_single_sample_disagreement')
             if previous.get('runners') is not None and previous.get('runners') == following.get('runners') and row.get('runners') != previous['runners']:

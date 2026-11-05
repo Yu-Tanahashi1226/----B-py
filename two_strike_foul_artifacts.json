@@ -1,10 +1,14 @@
 {
   "two_strike_foul_program.zip": {
-    "bytes": 1592488,
-    "sha256": "678b68e6ef852b78d404c7622a5752c42a168c9e465207bd16aeead2b83ced0e"
+    "bytes": 2092069,
+    "sha256": "13689dd321a045aed0eb088b375a08bd4a49dba45166c58ec1713cd11904b183"
   },
   "two_strike_foul_results.zip": {
     "bytes": 22320846,
     "sha256": "bb389426b86a9cb28d98de3b6d90953c12b7e40fe112dcc127a275feb3f8e740"
+  },
+  "reference_extraction_example.zip": {
+    "bytes": 35557614,
+    "sha256": "07ff78b61f098ada3072e36281886df35ddbe281b9beee7df078473844d33d69"
   }
 }

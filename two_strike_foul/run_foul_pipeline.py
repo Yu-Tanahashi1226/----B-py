@@ -127,7 +127,17 @@ def main():
     parser.add_argument('--stop-after', choices=['gate'], help='VideoMAEを実行せず対象区間の決定まで行う')
     parser.add_argument('--include-following-pitch', action=argparse.BooleanOptionalAction, default=None,
                         help='条件一致の直後の投球も比較用に調べる（既定では調べない）')
+    parser.add_argument('--references-dir',help='10本の参考動画を照合し、MP4抽出とBSO・VideoMAE確認を行う新モード')
+    parser.add_argument('--scoreboard-scope',choices=['full','matched'],default='full',help='参考場面モードのYOLO/OCR対象範囲')
     args = parser.parse_args()
+    if args.references_dir:
+        if not args.video or not args.output:
+            parser.error('参考場面モードは --video と --output を指定してください')
+        if args.resume or args.stop_after or args.preflight or args.include_following_pitch is not None:
+            parser.error('参考場面モードの再開・抽出だけの実行は extract_reference_scenes.py の手順を参照してください')
+        return subprocess.run([sys.executable,str(ROOT/'extract_reference_scenes.py'),'--config',args.config,
+                               '--video',args.video,'--references-dir',args.references_dir,'--output',args.output,
+                               '--analyze','--scoreboard-scope',args.scoreboard_scope]).returncode
     if args.resume:
         if args.video or args.output or args.include_following_pitch is not None:
             parser.error('--resume は保存済みの動画・設定で再開します。変更する場合は新規実行してください')

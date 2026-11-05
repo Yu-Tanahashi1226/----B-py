@@ -1,0 +1,3 @@
+﻿event_id,reference,pitch_index,start_sec,end_sec,status,count_gate_reason,before_balls,before_strikes,before_outs,after_balls,after_strikes,after_outs,model_start_sec,model_end_sec,pitch_model_score,foul_model_score,foul_model_decision,review_required,candidate_clip
+1,1urafaul1.mp4,1,3.8666666666666663,6.633333333333333,model_supported_foul_candidate,two_strikes_bso_unchanged,0,2,0,0,2,0,4.174131393432617,6.419946543375651,0.9617660641670227,0.513044710421441,True,True,foul_candidates/1urafaul1__pitch01_review.mp4
+2,1urafaul1.mp4,2,18.96666666666667,21.833333333333336,inning_or_half_changed_review,inning_or_half_changed_review,0,2,0,1,2,2,,,,,,True,
