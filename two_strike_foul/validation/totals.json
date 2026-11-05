@@ -1,0 +1,11 @@
+{
+  "input_videos": 10,
+  "duration_sec": 378.53333333333336,
+  "scoreboard_observations": 762,
+  "selected_episodes": 2,
+  "inferred_fouls": 2,
+  "selected_video_sec": 16.5,
+  "encoded_clips": 59,
+  "outside_gate_clips": 0,
+  "confirmed_fouls": null
+}

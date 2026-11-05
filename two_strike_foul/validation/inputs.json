@@ -1,0 +1,112 @@
+[
+  {
+    "video": "1urafaul1.mp4",
+    "bytes": 37904038,
+    "source_sha256": "3cfeba5de6673e420de6e4346f295ff7d016cf98ae08eace160b893bbe7d252f",
+    "fps": 30.0,
+    "frames": 629,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 20.966666666666665,
+    "source": "Previously restored user-uploaded parts; oversized re-uploads could not be byte-compared."
+  },
+  {
+    "video": "2omotefaul2.mp4",
+    "bytes": 144549211,
+    "source_sha256": "6dfa3c748df33d375c349d24c89699f82deb83bb483c2708ce9ffa94006dcecc",
+    "fps": 30.0,
+    "frames": 1926,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 64.2,
+    "source": "Previously restored user-uploaded parts; oversized re-uploads could not be byte-compared."
+  },
+  {
+    "video": "2urafaul3.mp4",
+    "bytes": 58668687,
+    "source_sha256": "e2209aef356be2d176f292f0e2fb389b6aa16528f87d15f5b4d752ccbbf07fa9",
+    "fps": 30.0,
+    "frames": 767,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 25.566666666666666,
+    "source": "Previously restored user-uploaded parts; oversized re-uploads could not be byte-compared."
+  },
+  {
+    "video": "4omotefaul4.mp4",
+    "bytes": 113181610,
+    "source_sha256": "5b0ed8b40e5a060579b866562fcfa594f95a0fb6214a5cf041a9d7817e3d5b53",
+    "fps": 30.0,
+    "frames": 1731,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 57.7,
+    "source": "Previously restored user-uploaded parts; oversized re-uploads could not be byte-compared."
+  },
+  {
+    "video": "4urafaul5.mp4",
+    "bytes": 43477661,
+    "source_sha256": "d0b5bb3556814d57a5e106c271fba1dcb3f6407f7dadcd229704fe78545cee21",
+    "fps": 30.0,
+    "frames": 646,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 21.533333333333335,
+    "source": "Previously restored user-uploaded parts; oversized re-uploads could not be byte-compared."
+  },
+  {
+    "video": "5omotefaul6.mp4",
+    "bytes": 61877392,
+    "source_sha256": "58f24ad08b6dddeb1e26d01f4b77291607b0c8428893d07fca6e5da1bceb6e7e",
+    "fps": 30.0,
+    "frames": 839,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 27.966666666666665,
+    "source": "Previously restored user-uploaded parts; oversized re-uploads could not be byte-compared."
+  },
+  {
+    "video": "5omotefaul7.mp4",
+    "bytes": 127515196,
+    "source_sha256": "f1cc76084f3aed204a0fe1b2625ae225607e69e83bcdc7f7a6f060c85735b4b1",
+    "fps": 30.0,
+    "frames": 1625,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 54.166666666666664,
+    "source": "Previously restored user-uploaded parts; oversized re-uploads could not be byte-compared."
+  },
+  {
+    "video": "5urafaul8.mp4",
+    "bytes": 124700378,
+    "source_sha256": "18ad6acea335d4e09856ec884236f968db6c4c885b43fa8766fc2825a327bf3c",
+    "fps": 30.0,
+    "frames": 1721,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 57.36666666666667,
+    "source": "Previously restored user-uploaded parts; oversized re-uploads could not be byte-compared."
+  },
+  {
+    "video": "7urafaul9.mp4",
+    "bytes": 49116135,
+    "source_sha256": "43e9414cc7f04472adf601a950dd303015cd1397b49ff39f857703c70ba2836c",
+    "fps": 30.0,
+    "frames": 758,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 25.266666666666666,
+    "source": "Previously restored user-uploaded parts; oversized re-uploads could not be byte-compared."
+  },
+  {
+    "video": "8urafaul10.mp4",
+    "bytes": 55670290,
+    "source_sha256": "51e0a7bd13ceb0deb204ba08a58b52e396424572929b275c062e6da89b0cc37a",
+    "fps": 30.0,
+    "frames": 714,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 23.8,
+    "source": "Previously restored user-uploaded parts; oversized re-uploads could not be byte-compared."
+  }
+]

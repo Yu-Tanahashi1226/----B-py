@@ -1,0 +1,112 @@
+[
+  {
+    "video": "1urafaul1.mp4",
+    "passed": true,
+    "selected_windows": 1,
+    "encoded_clips": 27,
+    "selected_video_sec": 7.5,
+    "source_video_sec": 20.966666666666665,
+    "selected_fraction": 0.35771065182829886,
+    "outside_gate_clips": 0,
+    "whole_video_encoder_used": false
+  },
+  {
+    "video": "2omotefaul2.mp4",
+    "passed": true,
+    "selected_windows": 1,
+    "encoded_clips": 32,
+    "selected_video_sec": 9.0,
+    "source_video_sec": 64.2,
+    "selected_fraction": 0.14018691588785046,
+    "outside_gate_clips": 0,
+    "whole_video_encoder_used": false
+  },
+  {
+    "video": "2urafaul3.mp4",
+    "passed": true,
+    "selected_windows": 0,
+    "encoded_clips": 0,
+    "selected_video_sec": 0.0,
+    "source_video_sec": 25.566666666666666,
+    "selected_fraction": 0.0,
+    "outside_gate_clips": 0,
+    "whole_video_encoder_used": false
+  },
+  {
+    "video": "4omotefaul4.mp4",
+    "passed": true,
+    "selected_windows": 0,
+    "encoded_clips": 0,
+    "selected_video_sec": 0.0,
+    "source_video_sec": 57.7,
+    "selected_fraction": 0.0,
+    "outside_gate_clips": 0,
+    "whole_video_encoder_used": false
+  },
+  {
+    "video": "4urafaul5.mp4",
+    "passed": true,
+    "selected_windows": 0,
+    "encoded_clips": 0,
+    "selected_video_sec": 0.0,
+    "source_video_sec": 21.533333333333335,
+    "selected_fraction": 0.0,
+    "outside_gate_clips": 0,
+    "whole_video_encoder_used": false
+  },
+  {
+    "video": "5omotefaul6.mp4",
+    "passed": true,
+    "selected_windows": 0,
+    "encoded_clips": 0,
+    "selected_video_sec": 0.0,
+    "source_video_sec": 27.966666666666665,
+    "selected_fraction": 0.0,
+    "outside_gate_clips": 0,
+    "whole_video_encoder_used": false
+  },
+  {
+    "video": "5omotefaul7.mp4",
+    "passed": true,
+    "selected_windows": 0,
+    "encoded_clips": 0,
+    "selected_video_sec": 0.0,
+    "source_video_sec": 54.166666666666664,
+    "selected_fraction": 0.0,
+    "outside_gate_clips": 0,
+    "whole_video_encoder_used": false
+  },
+  {
+    "video": "5urafaul8.mp4",
+    "passed": true,
+    "selected_windows": 0,
+    "encoded_clips": 0,
+    "selected_video_sec": 0.0,
+    "source_video_sec": 57.36666666666667,
+    "selected_fraction": 0.0,
+    "outside_gate_clips": 0,
+    "whole_video_encoder_used": false
+  },
+  {
+    "video": "7urafaul9.mp4",
+    "passed": true,
+    "selected_windows": 0,
+    "encoded_clips": 0,
+    "selected_video_sec": 0.0,
+    "source_video_sec": 25.266666666666666,
+    "selected_fraction": 0.0,
+    "outside_gate_clips": 0,
+    "whole_video_encoder_used": false
+  },
+  {
+    "video": "8urafaul10.mp4",
+    "passed": true,
+    "selected_windows": 0,
+    "encoded_clips": 0,
+    "selected_video_sec": 0.0,
+    "source_video_sec": 23.8,
+    "selected_fraction": 0.0,
+    "outside_gate_clips": 0,
+    "whole_video_encoder_used": false
+  }
+]

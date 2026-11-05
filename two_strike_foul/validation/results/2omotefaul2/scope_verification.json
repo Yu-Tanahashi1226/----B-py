@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "selected_windows": 1,
+  "encoded_clips": 32,
+  "selected_video_sec": 9.0,
+  "source_video_sec": 64.2,
+  "selected_fraction": 0.14018691588785046,
+  "outside_gate_clips": 0,
+  "whole_video_encoder_used": false
+}

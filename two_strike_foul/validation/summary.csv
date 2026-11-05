@@ -1,0 +1,11 @@
+﻿video,duration_sec,scoreboard_observations,disappearance_episodes,selected_episodes,inferred_fouls,gate_reasons
+1urafaul1.mp4,20.966666666666665,42,1,1,1,"{""two_strikes_bso_unchanged"": 1}"
+2omotefaul2.mp4,64.2,129,2,1,1,"{""two_strikes_bso_unchanged"": 1, ""after_bso_unreadable"": 1}"
+2urafaul3.mp4,25.566666666666666,52,0,0,0,{}
+4omotefaul4.mp4,57.7,116,1,0,0,"{""after_bso_unreadable"": 1}"
+4urafaul5.mp4,21.533333333333335,44,0,0,0,{}
+5omotefaul6.mp4,27.966666666666665,56,0,0,0,{}
+5omotefaul7.mp4,54.166666666666664,109,0,0,0,{}
+5urafaul8.mp4,57.36666666666667,115,0,0,0,{}
+7urafaul9.mp4,25.266666666666666,51,0,0,0,{}
+8urafaul10.mp4,23.8,48,0,0,0,{}

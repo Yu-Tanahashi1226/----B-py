@@ -1,0 +1,107 @@
+{
+  "sample_period_sec": 0.5,
+  "python": {
+    "yolo": "python",
+    "ocr": "python",
+    "pitch": "python"
+  },
+  "yolo": {
+    "weights": "models/scoreboard_best.pt",
+    "scoreboard_labels": [
+      "scoreboard"
+    ],
+    "confidence": 0.2,
+    "image_size": 1280,
+    "inner_weights": "models/inner_best.pt",
+    "inner_confidence": 0.2,
+    "inner_image_size": 960,
+    "inner_margin_rate": 0.05,
+    "board_layout": {
+      "minimum_x": 0.68,
+      "minimum_y": 0.72,
+      "width_range": [
+        0.15,
+        0.28
+      ],
+      "aspect_range": [
+        1.8,
+        2.7
+      ]
+    },
+    "threads": 2,
+    "device": "cpu"
+  },
+  "ocr": {
+    "role": "inning_score",
+    "detector_dir": "~/.paddlex/official_models/PP-OCRv6_medium_det",
+    "recognizer_dir": "~/.paddlex/official_models/PP-OCRv6_medium_rec",
+    "detector_name": "PP-OCRv6_medium_det",
+    "recognizer_name": "PP-OCRv6_medium_rec",
+    "language": "japan",
+    "minimum_confidence": 0.6,
+    "regions": {
+      "inning": [
+        0.0,
+        0.43,
+        0.39,
+        0.74
+      ],
+      "upper_score": [
+        0.76,
+        0.05,
+        0.99,
+        0.36
+      ],
+      "lower_score": [
+        0.76,
+        0.38,
+        0.99,
+        0.74
+      ],
+      "upper_team": [
+        0.39,
+        0.02,
+        0.76,
+        0.37
+      ],
+      "lower_team": [
+        0.39,
+        0.39,
+        0.76,
+        0.74
+      ]
+    },
+    "numeric_recognition_fallback": true,
+    "interval_sec": 2.0,
+    "enable_mkldnn": false,
+    "cpu_threads": 2,
+    "context_max_age_sec": 2.5
+  },
+  "pitch": {
+    "checkpoint": "models/compact_actionformer.pth",
+    "encoder": "MCG-NJU/videomae-base-finetuned-kinetics",
+    "revision": "488eb9a0565f257b32866000305c8178965eb9f6",
+    "threads": 4,
+    "device": "cpu",
+    "minimum_proposal_score": 0.15,
+    "pitch_confirmation_score": 0.5,
+    "soft_nms_sigma": 0.5,
+    "max_proposals_per_window": 100,
+    "batch_size": 2,
+    "encoder_precision": "float32"
+  },
+  "schema_version": 1,
+  "video": "test.mp4",
+  "gate": {
+    "min_absent_samples": 2,
+    "min_visible_samples": 2,
+    "stable_samples": 3,
+    "pre_window_sec": 5.0,
+    "post_settle_sec": 1.0,
+    "post_window_sec": 6.0,
+    "pitch_lookback_sec": 8.0,
+    "post_padding_sec": 0.5,
+    "max_gap_sec": 45.0,
+    "include_following_pitch": false
+  }
+}

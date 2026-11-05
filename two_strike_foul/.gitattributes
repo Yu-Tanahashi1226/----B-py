@@ -1,0 +1,2 @@
+# CSV exports intentionally use CRLF for Windows/Excel.
+*.csv whitespace=cr-at-eol

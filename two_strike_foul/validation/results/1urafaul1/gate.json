@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "scope": "scoreboard_gated_only",
+  "settings": {
+    "min_absent_samples": 2,
+    "min_visible_samples": 2,
+    "stable_samples": 3,
+    "pre_window_sec": 5.0,
+    "post_settle_sec": 1.0,
+    "post_window_sec": 6.0,
+    "pitch_lookback_sec": 8.0,
+    "post_padding_sec": 0.5,
+    "max_gap_sec": 45.0,
+    "max_sample_gap_factor": 1.6,
+    "include_following_pitch": false,
+    "following_search_sec": 45.0
+  },
+  "sample_period_sec": 0.5,
+  "episodes": [
+    {
+      "last_visible_sec": 4.0,
+      "visible_block_start_sec": 0.0,
+      "disappear_sec": 4.5,
+      "reappear_sec": 7.0,
+      "post_visible_end_sec": 20.0,
+      "absent_samples": 5,
+      "episode_id": 1,
+      "selected": true,
+      "before": {
+        "balls": 0,
+        "strikes": 2,
+        "outs": 0,
+        "first_sec": 0.0,
+        "last_sec": 4.0,
+        "support": 9,
+        "inning": 1,
+        "half": "bottom",
+        "upper_score": 0,
+        "lower_score": 0,
+        "runner_first": false,
+        "runner_second": false,
+        "runner_third": false
+      },
+      "after": {
+        "balls": 0,
+        "strikes": 2,
+        "outs": 0,
+        "first_sec": 8.0,
+        "last_sec": 13.0,
+        "support": 11,
+        "inning": null,
+        "half": "bottom",
+        "upper_score": 0,
+        "lower_score": 0,
+        "runner_first": false,
+        "runner_second": false,
+        "runner_third": false
+      },
+      "missing_context": [
+        "inning"
+      ],
+      "post_check_begin_sec": 8.0,
+      "post_check_end_sec": 13.0,
+      "post_stable_states": [
+        {
+          "balls": 0,
+          "strikes": 2,
+          "outs": 0,
+          "first_sec": 8.0,
+          "last_sec": 13.0,
+          "support": 11,
+          "inning": null,
+          "half": "bottom",
+          "upper_score": 0,
+          "lower_score": 0,
+          "runner_first": false,
+          "runner_second": false,
+          "runner_third": false
+        }
+      ],
+      "post_available_samples": 11,
+      "required_stable_samples": 3,
+      "context_changes": [],
+      "reason": "two_strikes_bso_unchanged"
+    }
+  ],
+  "requests": [
+    {
+      "request_id": 1,
+      "episode_id": 1,
+      "parent_episode_id": 1,
+      "role": "foul_candidate",
+      "start_frame": 0,
+      "end_frame_exclusive": 225,
+      "start_sec": 0.0,
+      "end_sec": 7.5,
+      "pitch_must_start_before_sec": 4.5,
+      "rationale": "scoreboard gate; no whole-video pitch inference",
+      "window_id": 1
+    }
+  ],
+  "windows": [
+    {
+      "window_id": 1,
+      "start_frame": 0,
+      "end_frame_exclusive": 225,
+      "start_sec": 0.0,
+      "end_sec": 7.5,
+      "request_ids": [
+        1
+      ]
+    }
+  ],
+  "selected_episodes": 1,
+  "visibility_notes": [
+    {
+      "start_sec": 20.5,
+      "end_sec": 20.5,
+      "reason": "short_absence_ignored"
+    }
+  ],
+  "interpretation": "Same BSO after disappearance is a candidate, not proof of a foul."
+}

@@ -1,0 +1,31 @@
+{
+  "video": "4urafaul5.mp4",
+  "source_sha256": "d0b5bb3556814d57a5e106c271fba1dcb3f6407f7dadcd229704fe78545cee21",
+  "duration_sec": 21.533333333333335,
+  "scoreboard_observations": 44,
+  "disappearance_episodes": 0,
+  "selected_episodes": 0,
+  "videomae_windows": 0,
+  "inferred_fouls": 0,
+  "gate_reasons": {},
+  "confirmed_fouls": null,
+  "visibility_notes": [
+    {
+      "start_sec": 20.5,
+      "end_sec": 21.5,
+      "reason": "clip_ends_without_board_no_reappearance"
+    }
+  ],
+  "whole_video_videomae_used": false,
+  "diagnostics": {
+    "selected_review_images": 8,
+    "reason_observations": {
+      "bso_single_sample_disagreement": 1,
+      "board_presence_boundary_check_true_absence_or_miss": 1
+    },
+    "annotation_shortage_confirmed": false,
+    "review_csv": "annotation_review/review.csv",
+    "limitation": "Flags include real count changes, true graphic absence and OCR/layout errors. Human review is required before assigning a model error or training-data cause."
+  },
+  "interpretation": "Rule + pitch-motion model inference, not confirmed foul ground truth. Count-unchanged events can include replays, pickoffs and graphic delays."
+}

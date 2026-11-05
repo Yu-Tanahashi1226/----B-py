@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "scope": "scoreboard_gated_only",
+  "settings": {
+    "min_absent_samples": 2,
+    "min_visible_samples": 2,
+    "stable_samples": 3,
+    "pre_window_sec": 5.0,
+    "post_settle_sec": 1.0,
+    "post_window_sec": 6.0,
+    "pitch_lookback_sec": 8.0,
+    "post_padding_sec": 0.5,
+    "max_gap_sec": 45.0,
+    "max_sample_gap_factor": 1.6,
+    "include_following_pitch": false,
+    "following_search_sec": 45.0
+  },
+  "sample_period_sec": 0.5,
+  "episodes": [],
+  "requests": [],
+  "windows": [],
+  "selected_episodes": 0,
+  "visibility_notes": [
+    {
+      "start_sec": 20.5,
+      "end_sec": 21.5,
+      "reason": "clip_ends_without_board_no_reappearance"
+    }
+  ],
+  "interpretation": "Same BSO after disappearance is a candidate, not proof of a foul."
+}

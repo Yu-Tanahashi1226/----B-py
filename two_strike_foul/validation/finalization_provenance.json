@@ -1,0 +1,27 @@
+{
+  "scoreboard_models_rerun_on_each_input": true,
+  "whole_video_videomae_cache_reused": false,
+  "initial_videomae_encoded_only_selected_windows": true,
+  "final_metadata_update_reused_same_gated_window_features": true,
+  "gate_geometry_and_selection_unchanged_verified": true,
+  "code_sha256": {
+    "audit_annotations.py": "d11ef638be1567e620dafa5622ae3a30414282767aeb4a92094adc18509bd720",
+    "configure_windows.py": "38ab571b8ccc8f791bf2982cb1fa12fe36ddfa2e7115834553528278b5f9955f",
+    "verify_scope.py": "46936e578f34152646762153b73c89861a4099f0a60f4783e793b0d544c38b75",
+    "dataset_inventory.py": "736ee4f8447334a190be3f6b56109c4227631121cd19b4307d521eff163faacf",
+    "report.py": "3e2286e92f6fb928a3226a114b549fa77f9b1eef4daead31f2a162912af8e3a1",
+    "plot_timeline.py": "b31b7ca03a6ee74ab9be1d8f93f8ffbd7ce0700e0609f9992eb4e010d86bbb8f",
+    "run_foul_pipeline.py": "4e1a3d41c211ca208dbd320756d5da775687c84f2da761d97b8319002fb9e600",
+    "scoreboard_worker.py": "2c6ae6f4f2179940171b661983ebe126f32583b1e3ef090f629f574c0c3d381f",
+    "common.py": "0e529ae95448d0da374afa071de1d4d501345f745b1b066de3314411cc97c311",
+    "pitch_backend.py": "19e01e82939a5d2934a0aa2c3cebc9352c8528d3eb5f860689583ba3a5f0f79e",
+    "pitch_worker.py": "769496939f708ba60c7016fda03ffa00653d95a19b8a8af8e45a9817c2d0fcb8",
+    "run_batch.py": "32af044ebcc316d50acf6d3be85a8fddce8c7671c04837c99b1bcee1cb1bd338",
+    "ocr_fallback.py": "728fca82fa31eed0605a12a579d310be9a4884ba49022b50a4d175b8fc42711c",
+    "gating.py": "8f0ee99224461cc67fd3604c205645f63d8695920058e6e4f756db902bfc9899",
+    "open_results.py": "b113f44b22a2d6bf0892ba93547add66d154a2cb3332a32aa8a49b6234122c70",
+    "board_adapter.py": "4d72f7b80e000e4a0fdec4affc2c2e9cfd50ea95726d9f7403a23f4aad5c53b0"
+  },
+  "all_result_html_links_exist": true,
+  "candidate_csv_schema_consistent_with_empty_results": true
+}

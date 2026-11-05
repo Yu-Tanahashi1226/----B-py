@@ -1,0 +1,42 @@
+{
+  "yolo.weights": {
+    "bytes": 6330147,
+    "sha256": "0e903b85ddecf5e344887bfb1d258a7ec0a06cbf8150f38d337190214ffd433a"
+  },
+  "yolo.inner_weights": {
+    "bytes": 6281770,
+    "sha256": "9107363b941315d8228def80763ef7cea7eed652330e3acd6da7fa7c0ffeb934"
+  },
+  "pitch.checkpoint": {
+    "bytes": 15803129,
+    "sha256": "274efec2ccfcc24142326ac4c6a77dbc6932a000cd5fd3d21d6a587562506560"
+  },
+  "ocr.detector_dir": {
+    "inference.pdiparams": {
+      "bytes": 61960476,
+      "sha256": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960"
+    },
+    "inference.json": {
+      "bytes": 312150,
+      "sha256": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5"
+    },
+    "inference.yml": {
+      "bytes": 886,
+      "sha256": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+    }
+  },
+  "ocr.recognizer_dir": {
+    "inference.pdiparams": {
+      "bytes": 76465087,
+      "sha256": "1b01c79a914587933f615569e75de54f2e638ebb5d3f3b3c1b38c24ede8c7319"
+    },
+    "inference.json": {
+      "bytes": 221814,
+      "sha256": "0b2e25e990bd072f1bf77d59d67d508bce6c4bd44af6624e0fb27d6da2cd00e8"
+    },
+    "inference.yml": {
+      "bytes": 150580,
+      "sha256": "991b700facf5b50a7de193468207d5f4255b538dde0d312ae3b7c7a9b6873129"
+    }
+  }
+}

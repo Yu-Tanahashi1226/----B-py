@@ -1,0 +1,8 @@
+output/
+.cache/
+__pycache__/
+config.local.json
+*.mp4
+*.pt
+*.pth
+*.npy

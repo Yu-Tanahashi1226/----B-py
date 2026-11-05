@@ -1,0 +1,17 @@
+{
+  "yolo": {
+    "ultralytics": "8.3.221",
+    "torch": "2.9.0+cpu",
+    "opencv-python": "5.0.0.93"
+  },
+  "ocr": {
+    "paddleocr": "3.7.0",
+    "paddlex": "3.7.2",
+    "paddlepaddle": "3.3.1"
+  },
+  "pitch": {
+    "torch": "2.13.0+cpu",
+    "transformers": "4.57.6",
+    "torchvision": "0.28.0+cpu"
+  }
+}

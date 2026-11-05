@@ -1,0 +1,10 @@
+{
+  "selected_review_images": 8,
+  "reason_observations": {
+    "low_confidence_inner_detection": 2,
+    "board_presence_boundary_check_true_absence_or_miss": 1
+  },
+  "annotation_shortage_confirmed": false,
+  "review_csv": "annotation_review/review.csv",
+  "limitation": "Flags include real count changes, true graphic absence and OCR/layout errors. Human review is required before assigning a model error or training-data cause."
+}

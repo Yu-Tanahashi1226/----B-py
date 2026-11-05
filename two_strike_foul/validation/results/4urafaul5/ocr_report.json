@@ -1,0 +1,13 @@
+{
+  "ocr_frames": 13,
+  "elapsed_sec": 88.82540731501649,
+  "fields": [
+    "inning",
+    "upper_score",
+    "lower_score",
+    "upper_team",
+    "lower_team"
+  ],
+  "model": "PP-OCRv6_medium_rec",
+  "unknown_policy": "Unrecognized fields remain null; team strings are OCR observations, not normalized ground truth."
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "request_id": 1,
+    "episode_id": 1,
+    "parent_episode_id": 1,
+    "role": "foul_candidate",
+    "start_frame": 0,
+    "end_frame_exclusive": 225,
+    "start_sec": 0.0,
+    "end_sec": 7.5,
+    "pitch_must_start_before_sec": 4.5,
+    "rationale": "scoreboard gate; no whole-video pitch inference",
+    "window_id": 1,
+    "before": {
+      "balls": 0,
+      "strikes": 2,
+      "outs": 0,
+      "first_sec": 0.0,
+      "last_sec": 4.0,
+      "support": 9,
+      "inning": 1,
+      "half": "bottom",
+      "upper_score": 0,
+      "lower_score": 0,
+      "runner_first": false,
+      "runner_second": false,
+      "runner_third": false
+    },
+    "after": {
+      "balls": 0,
+      "strikes": 2,
+      "outs": 0,
+      "first_sec": 8.0,
+      "last_sec": 13.0,
+      "support": 11,
+      "inning": null,
+      "half": "bottom",
+      "upper_score": 0,
+      "lower_score": 0,
+      "runner_first": false,
+      "runner_second": false,
+      "runner_third": false
+    },
+    "status": "inferred_two_strike_foul",
+    "pitch_supported_by_model": true,
+    "confirmed_foul": null,
+    "review_required": true,
+    "model_start_sec": 1.8197264353434244,
+    "model_end_sec": 4.1163884480794275,
+    "model_score": 0.9410816431045532,
+    "proposal_count": 2,
+    "eligible_proposal_count": 2,
+    "missing_context": [
+      "inning"
+    ]
+  }
+]

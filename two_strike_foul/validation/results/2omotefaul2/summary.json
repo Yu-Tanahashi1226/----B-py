@@ -1,0 +1,30 @@
+{
+  "video": "2omotefaul2.mp4",
+  "source_sha256": "6dfa3c748df33d375c349d24c89699f82deb83bb483c2708ce9ffa94006dcecc",
+  "duration_sec": 64.2,
+  "scoreboard_observations": 129,
+  "disappearance_episodes": 2,
+  "selected_episodes": 1,
+  "videomae_windows": 1,
+  "inferred_fouls": 1,
+  "gate_reasons": {
+    "two_strikes_bso_unchanged": 1,
+    "after_bso_unreadable": 1
+  },
+  "confirmed_fouls": null,
+  "visibility_notes": [],
+  "whole_video_videomae_used": false,
+  "diagnostics": {
+    "selected_review_images": 16,
+    "reason_observations": {
+      "board_presence_boundary_check_true_absence_or_miss": 4,
+      "bso_single_sample_disagreement": 1,
+      "ocr_inning_or_half_disagreement": 1,
+      "ocr_missing_field": 4
+    },
+    "annotation_shortage_confirmed": false,
+    "review_csv": "annotation_review/review.csv",
+    "limitation": "Flags include real count changes, true graphic absence and OCR/layout errors. Human review is required before assigning a model error or training-data cause."
+  },
+  "interpretation": "Rule + pitch-motion model inference, not confirmed foul ground truth. Count-unchanged events can include replays, pickoffs and graphic delays."
+}

@@ -1,0 +1,25 @@
+{
+  "reviewed_fields": {
+    "board_present": 1,
+    "balls": 1,
+    "strikes": 1,
+    "outs": 1,
+    "first": 1,
+    "second": 1,
+    "third": 1
+  },
+  "mismatches": {
+    "balls": 1
+  },
+  "examples": [
+    {
+      "frame": "1200",
+      "field": "balls",
+      "predicted": 0,
+      "truth": 1,
+      "image": "2omote_board_40.jpg"
+    }
+  ],
+  "selected_sample_only": true,
+  "interpretation": "選ばれた確認画像内の不一致です。動画全体の精度や学習データ不足を示す値ではありません。"
+}

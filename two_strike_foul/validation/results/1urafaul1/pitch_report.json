@@ -1,0 +1,22 @@
+{
+  "scope": "scoreboard_gated_only",
+  "gate_sha256": "98e7ab286ff66d9d25d0a53599807069dfc74804e970f12cf348ab81276182d1",
+  "windows": [
+    {
+      "window_id": 1,
+      "feature_shape": [
+        27,
+        768
+      ],
+      "cache_reused": true,
+      "raw_proposals": 12,
+      "retained_proposals": 2
+    }
+  ],
+  "encoded_clips": 27,
+  "proposals": 2,
+  "checkpoint_sha256": "274efec2ccfcc24142326ac4c6a77dbc6932a000cd5fd3d21d6a587562506560",
+  "whole_video_encoder_used": false,
+  "elapsed_sec": 4.423958392988425,
+  "interpretation": "VideoMAE features + simplified Compact ActionFormer detect pitch-like motion. This is not a foul-trained classifier."
+}

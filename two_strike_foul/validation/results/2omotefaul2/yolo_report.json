@@ -1,0 +1,7 @@
+{
+  "sampled_frames": 129,
+  "weights": "/workspace/baseball-integration/received_assets/models/scoreboard_best.pt",
+  "inner_weights": "/workspace/baseball-integration/received_assets/models/inner_best.pt",
+  "elapsed_sec": 112.30572261998896,
+  "sampling_note": "Whole video, sampled frames. Disappearances shorter than sample period can be missed."
+}
