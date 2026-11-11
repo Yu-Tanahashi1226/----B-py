@@ -1,0 +1,5 @@
+# 投球区間検出用の重み
+
+compact_actionformer.pthは、以前の検証で使用した既存の簡略化Compact ActionFormerの重みです。新しく学習した重みではありません。入力は固定したVideoMAEの768次元特徴です。
+
+重みはプログラムZIPまたは重みZIPに同梱しています。Gitの個別ファイルとしては管理していません。

@@ -11,6 +11,17 @@ import time
 ROOT=Path(__file__).resolve().parent
 
 
+def load_config(path, required=False):
+    path=Path(path).resolve()
+    if not path.is_file():
+        if required:
+            raise FileNotFoundError(f'設定ファイルが見つかりません: {path}\n'
+                                    '先に configure_windows.py を正常終了させ、config.local.json が保存されたことを確認してください。'
+                                    '重みが見つからず設定が停止した場合は、その重みを配置して設定をやり直してください。')
+        return None
+    return json.loads(path.read_text(encoding='utf-8-sig'))
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--video',required=True)
@@ -27,6 +38,8 @@ def main():
     parser.add_argument('--ambiguity-margin',type=float,default=.025)
     args=parser.parse_args()
     if not 0<args.minimum_similarity<=1 or not 0<=args.ambiguity_margin<1:parser.error('Invalid similarity thresholds')
+    config=Path(args.config).resolve() if args.config else ROOT/'config.local.json'
+    cfg=load_config(config,required=bool(args.config or args.analyze))
     video=Path(args.video).expanduser().resolve();refs=Path(args.references_dir).expanduser().resolve()
     if not video.is_file():raise FileNotFoundError(video)
     catalog=json.loads((ROOT/'reference_catalog.json').read_text(encoding='utf-8'))
@@ -34,9 +47,6 @@ def main():
     if not selected or (args.only and set(args.only)-{r['filename'] for r in selected}):parser.error('--only に指定された参考動画が登録されていません')
     missing=[r['filename'] for r in selected if not (refs/r['filename']).is_file()]
     if missing:raise FileNotFoundError('参考動画がありません: '+', '.join(missing))
-    config=Path(args.config).resolve() if args.config else ROOT/'config.local.json'
-    cfg=json.loads(config.read_text(encoding='utf-8-sig')) if config.is_file() else None
-    if args.analyze and cfg is None:raise ValueError('--analyze には --config config.local.json が必要です')
     executable=args.python or (cfg['python']['yolo'] if cfg else sys.executable)
     if '/' in executable or '\\' in executable:
         p=Path(executable).expanduser();executable=os.path.abspath(p if p.is_absolute() else config.parent/p)

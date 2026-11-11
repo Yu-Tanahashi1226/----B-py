@@ -35,6 +35,16 @@ cd C:\Users\yutan\kenkyuu\for_labelimg\two_strike_foul
 python configure_windows.py --project ".."
 ```
 
+更新版ZIPには、前回の検証に使ったCompact ActionFormer重みを `two_strike_foul/models/compact_actionformer.pth` に同梱しています。YOLO・OCRの重みと元動画は手元のファイルを使います。
+
+以前の版で「Compact ActionFormer重みが見つかりません」となる場合は、配布ページの重みZIPを現在の `two_strike_foul` フォルダーへ解凍し、明示的に指定してください。
+
+```powershell
+python configure_windows.py --project ".." --pitch-checkpoint ".\models\compact_actionformer.pth"
+```
+
+設定に失敗すると `config.local.json` は作成されません。`設定を保存: ...config.local.json` の表示を確認してから次の解析コマンドへ進みます。
+
 **参考場面の書き出しと、BSO・VideoMAEによる確認を一度に実行：**
 
 ```powershell

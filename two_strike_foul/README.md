@@ -44,7 +44,7 @@ python configure_windows.py --project "C:\Users\yutan\kenkyuu\for_labelimg"
 |---|---|
 | スコアボード | `runs/detect/scoreboard_model-2/weights/best.pt` |
 | BSO・走者 | `runs/detect/bso_inner_no_empty-3/weights/best.pt` または `bso_inner_model/weights/best.pt` |
-| 投球区間 | `compact_actionformer.pth` または `models/compact_actionformer.pth` |
+| 投球区間 | このプログラム内の `models/compact_actionformer.pth`（更新版ZIPに同梱）、または手元の既存ファイル |
 | OCR検出・認識 | `%USERPROFILE%\.paddlex\official_models\PP-OCRv6_medium_det` と `PP-OCRv6_medium_rec` |
 
 投球区間の重みが別の場所にあれば、場所を指定して設定します。

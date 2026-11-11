@@ -16,6 +16,24 @@ def choose_file(candidates, label):
     raise FileNotFoundError(label+' が見つかりません。確認した場所:\n'+'\n'.join(str(p) for p in candidates))
 
 
+def find_pitch_checkpoint(project, explicit=None, program_root=None):
+    """Prefer the verified bundled detector; an explicit path is never replaced."""
+    project=Path(project).expanduser().resolve()
+    program_root=Path(program_root).resolve() if program_root else ROOT
+    if explicit:
+        return choose_file([Path(explicit).expanduser()], '指定されたCompact ActionFormer重み')
+    candidates=[program_root/'models/compact_actionformer.pth',program_root/'compact_actionformer.pth',
+                project/'compact_actionformer.pth',project/'models/compact_actionformer.pth']
+    for repo in ['VideoMAE-Baseball','VideoMAE-Baseball-main']:
+        for directory in [project.parent/repo,project.parent/repo/repo]:
+            for result in ['videomae_actionformer','videomae_actionformer_cross_video']:
+                candidates.append(directory/'results'/result/'compact_actionformer.pth')
+    try:
+        return choose_file(candidates,'Compact ActionFormer重み')
+    except FileNotFoundError as exc:
+        raise FileNotFoundError(str(exc)+'\n重みZIPをこのプログラムのフォルダーへ解凍するか、--pitch-checkpoint "実際の保存先\\compact_actionformer.pth" を指定してください。') from None
+
+
 def python_candidates():
     candidates=[Path(sys.executable)]
     conda=os.environ.get('CONDA_EXE') or shutil.which('conda')
@@ -61,10 +79,9 @@ def main():
     cfg=json.loads((ROOT/'config.windows.json').read_text(encoding='utf-8'))
     board=[Path(args.scoreboard_weights)] if args.scoreboard_weights else [project/'runs/detect/scoreboard_model-2/weights/best.pt',project/'models/scoreboard_best.pt']
     inner=[Path(args.inner_weights)] if args.inner_weights else [project/'runs/detect/bso_inner_no_empty-3/weights/best.pt',project/'runs/detect/bso_inner_model/weights/best.pt',project/'models/inner_best.pt']
-    pitch=[Path(args.pitch_checkpoint)] if args.pitch_checkpoint else [project/'compact_actionformer.pth',project/'models/compact_actionformer.pth',project.parent/'VideoMAE-Baseball/results/videomae_actionformer/compact_actionformer.pth']
     cfg['yolo']['weights']=choose_file(board,'スコアボード重み')
     cfg['yolo']['inner_weights']=choose_file(inner,'BSO・走者重み')
-    cfg['pitch']['checkpoint']=choose_file(pitch,'Compact ActionFormer重み')
+    cfg['pitch']['checkpoint']=find_pitch_checkpoint(project,args.pitch_checkpoint)
     modelroot=Path(args.ocr_model_root).expanduser().resolve() if args.ocr_model_root else Path.home()/'.paddlex/official_models'
     for key,name in [('detector','PP-OCRv6_medium_det'),('recognizer','PP-OCRv6_medium_rec')]:
         directory=modelroot/name

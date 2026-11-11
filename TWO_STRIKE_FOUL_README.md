@@ -1,6 +1,7 @@
 # 参考10場面をtest.mp4から自動で切り出し、BSO・VideoMAEで確認する
 
 - [更新したプログラムZIP](two_strike_foul_program.zip)
+- [Compact ActionFormer重みだけのZIP](compact_actionformer_weights.zip)
 - [新しい実行手順](two_strike_foul/REFERENCE_EXTRACTION.md)
 - [新しい検証結果](two_strike_foul/REFERENCE_VALIDATION.md)
 - [実動画5uraからの抽出・分析例ZIP](reference_extraction_example.zip)
@@ -16,7 +17,15 @@ python run_foul_pipeline.py --config config.local.json --video "..\test.mp4" --r
 python open_results.py "..\test_reference_results"
 ```
 
-以前の `config.local.json` があれば設定のやり直しは不要です。FFmpegがない場合は、表示されたコマンドで処理用環境に `imageio-ffmpeg` を入れてください。重みの場所が異なる場合の指定方法は、実行手順にあります。元動画と既存の重みはZIPに含めていません。
+以前の `config.local.json` があれば設定のやり直しは不要です。プログラムZIPには、前回の検証と同じCompact ActionFormer重みを同梱しています。元動画・YOLO重み・OCR重みは手元のものを使います。FFmpegがない場合は、表示されたコマンドで処理用環境に `imageio-ffmpeg` を入れてください。
+
+**「Compact ActionFormer重みが見つかりません」で止まる場合：** 重みだけのZIPを現在の `two_strike_foul` フォルダーへ解凍し、`models/compact_actionformer.pth` を配置します。以前のプログラムでも、次の指定で設定できます。
+
+```powershell
+python configure_windows.py --project ".." --pitch-checkpoint ".\models\compact_actionformer.pth"
+```
+
+`設定を保存: ...config.local.json` と表示されたことを確認してから解析を実行してください。重み未検出で設定が止まると、設定ファイルも作られません。
 
 `scenes/` に参考動画と同じ10場面、`analysis/` に投球別のBSO・投球検出・試作ファウル判別を保存します。条件とモデルが支持する投球は `analysis/foul_candidates/` に確認用MP4として保存します。`matched` は参考場面と前後だけをYOLO/OCRで調べる設定です。全体のスコアボードを記録する場合は `full` に変えます。
 
