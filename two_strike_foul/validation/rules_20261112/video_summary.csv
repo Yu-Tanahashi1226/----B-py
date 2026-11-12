@@ -1,0 +1,11 @@
+﻿video,observations,rejected_field_readings,rejected_frames,evaluation_status
+1urafaul1.mp4,42,8,4,not_evaluated
+2omotefaul2.mp4,129,10,5,evaluated
+2urafaul3.mp4,52,8,4,not_evaluated
+4omotefaul4.mp4,116,0,0,not_evaluated
+4urafaul5.mp4,44,4,4,not_evaluated
+5omotefaul6.mp4,56,0,0,not_evaluated
+5omotefaul7.mp4,109,0,0,not_evaluated
+5urafaul8.mp4,115,17,13,not_evaluated
+7urafaul9.mp4,51,0,0,not_evaluated
+8urafaul10.mp4,48,0,0,not_evaluated

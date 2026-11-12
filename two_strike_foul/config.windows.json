@@ -91,6 +91,16 @@
     "encoder_precision": "float32"
   },
   "schema_version": 1,
+  "rules": {
+    "enabled": true,
+    "min_stable_samples": 2,
+    "ocr_stable_samples": 2,
+    "confirmation_window_sec": 6.0,
+    "gap_review_sec": 15.0,
+    "reset_evidence_max_age_sec": 8.0,
+    "initial_state": {},
+    "team_aliases": {}
+  },
   "video": "test.mp4",
   "gate": {
     "min_absent_samples": 2,

@@ -7,6 +7,7 @@ import subprocess
 
 from common import read_jsonl,save_json,sha256
 from event_count_gate import count_gate
+from scoreboard_rule_report import run_validation
 from run_foul_pipeline import resolve_config,preflight,environment,stage
 
 ROOT=Path(__file__).resolve().parent
@@ -35,9 +36,11 @@ def analyze(job,matches,source,ffmpeg):
     save_json(board_path,board_job);env=environment(output)
     stage(board_job,'yolo','scoreboard_worker.py',['yolo',str(board_path)],env,True)
     stage(board_job,'ocr','scoreboard_worker.py',['ocr',str(board_path)],env,True)
-    observations=read_jsonl(board_out/'observations.jsonl')
+    raw_observations=read_jsonl(board_out/'observations.jsonl')
+    observations=run_validation(board_job)
+    print(f'野球ルール確認: {board_out / "rules" / "review.html"}',flush=True)
     from report import export_images
-    save_json(board_out/'diagnostics.json',export_images(board_job,observations,{'episodes':[]}))
+    save_json(board_out/'diagnostics.json',export_images(board_job,raw_observations,{'episodes':[]}))
     events=[]
     for ref in job['references']:
         match=accepted.get(ref['filename'])
@@ -76,13 +79,16 @@ def analyze(job,matches,source,ffmpeg):
         writer=csv.DictWriter(stream,fieldnames=fields,extrasaction='ignore');writer.writeheader();writer.writerows(flat)
     # All scoreboard fields remain available even when an event cannot be judged.
     with (output/'scoreboard.csv').open('w',encoding='utf-8-sig',newline='') as stream:
-        fields2=['frame','time_sec','balls','strikes','outs','runner_first','runner_second','runner_third','inning','half','upper_team','lower_team','upper_score','lower_score']
+        fields2=['frame','time_sec','balls','strikes','outs','runner_first','runner_second','runner_third','inning','half','upper_team','lower_team','upper_score','lower_score','count_comparison_allowed','held_fields']
         writer=csv.DictWriter(stream,fieldnames=fields2);writer.writeheader()
         for row in observations:
             writer.writerow(dict(frame=row['frame'],time_sec=row['time_sec'],**{k:(row.get('count') or {}).get(k) for k in ['balls','strikes','outs']},
+                                 count_comparison_allowed=row.get('rule_validation',{}).get('count_comparison_allowed'),
+                                 held_fields=';'.join(k for k,v in row.get('rule_validation',{}).get('fields',{}).items() if v['status']=='held'),
                                  **{'runner_'+k:(row.get('runners') or {}).get(k) for k in ['first','second','third']},
                                  **{k:(row.get('scoreboard') or {}).get(k) for k in ['inning','half','upper_team','lower_team','upper_score','lower_score']}))
     text='<meta charset="utf-8"><style>body{font:17px/1.7 sans-serif;margin:30px}td,th{padding:8px;border:1px solid #ccc}table{border-collapse:collapse}video{max-width:750px;width:100%}</style><h1>BSOとVideoMAEの確認</h1><p>映像照合で投球時刻の候補を求め、2ストライク・BSO不変のものだけVideoMAEに渡しました。投球スコアと試作ファウル判別スコアを分けて表示します。どちらもファウルの確定判定ではありません。</p><p><a href="analysis.csv">投球別CSV</a> / <a href="scoreboard.csv">BSO・走者・文字情報CSV</a> / <a href="scoreboard/annotation_review/review.csv">注釈確認表</a></p><table><tr><th>参考場面</th><th>投球</th><th>判定</th><th>投球スコア</th><th>試作ファウルスコア</th></tr>'
+    text=text.replace('<table><tr>', '<p>スコアボードCSVには未検出・不整合時に保持した直前値を含みます。<a href="scoreboard/rules/review.html">野球ルールによる補正前後・保留理由・評価表</a>で新しい観測と区別できます。保持値だけではBSO不変の条件を満たしません。</p><table><tr>',1)
     for event in results:
         text+='<tr>'+''.join('<td>'+html.escape(str(event.get(k,'')))+'</td>' for k in ['reference','pitch_index','status','pitch_model_score','foul_model_score'])+'</tr>'
     text+='</table>'

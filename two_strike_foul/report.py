@@ -172,9 +172,11 @@ def export_images(job, rows, gate):
 
 
 def run(job):
+    from scoreboard_rule_report import run_validation
     output = Path(job['output'])
     gate = json.loads((output / 'gate.json').read_text())
-    rows = read_jsonl(output / 'observations.jsonl')
+    raw_rows = read_jsonl(output / 'observations.jsonl')
+    rows = run_validation(job)
     with (output / 'pitch_proposals.csv').open(encoding='utf-8-sig', newline='') as stream:
         proposals = list(csv.DictReader(stream))
     events = build_events(job, gate, proposals)
@@ -200,11 +202,13 @@ def run(job):
                                      **{k:(row.get('count') or {}).get(k) for k in ['balls','strikes','outs']},
                                      **{'runner_'+k:(row.get('runners') or {}).get(k) for k in ['first','second','third']},
                                      **{k:(row.get('scoreboard') or {}).get(k) for k in ['inning','half','upper_team','lower_team','upper_score','lower_score']},
-                                     count_status=row['count_status'], ocr_status=row['ocr_status'], context_source_sec=row.get('context_source_sec')))
+                                     count_status=row['count_status'], ocr_status=row['ocr_status'], context_source_sec=row.get('context_source_sec'),
+                                     count_comparison_allowed=row.get('rule_validation',{}).get('count_comparison_allowed'),
+                                     held_fields=';'.join(k for k,v in row.get('rule_validation',{}).get('fields',{}).items() if v['status']=='held')))
     write_csv(output / 'scoreboard.csv', observation_rows, list(observation_rows[0]) if observation_rows else ['frame','time_sec'])
     episodes = [{k:(json.dumps(v, ensure_ascii=False) if isinstance(v,(dict,list)) else v) for k,v in e.items()} for e in gate['episodes']]
     write_csv(output / 'gate_decisions.csv', episodes, list(dict.fromkeys(k for e in episodes for k in e)) or ['episode_id','reason','selected'])
-    diagnostics = export_images(job, rows, gate)
+    diagnostics = export_images(job, raw_rows, gate)
     save_json(output / 'diagnostics.json', diagnostics)
     summary = dict(video=Path(job['video']).name, source_sha256=job['sha256'], duration_sec=job['duration_sec'],
                    scoreboard_observations=len(rows), disappearance_episodes=len(gate['episodes']), selected_episodes=gate['selected_episodes'],
@@ -264,6 +268,7 @@ def make_html(job, rows, gate, events, summary):
         page += '<ul>'+''.join(f'<li>{n["start_sec"]:.2f}〜{n["end_sec"]:.2f}秒：{notes[n["reason"]]}</li>' for n in gate['visibility_notes'])+'</ul>'
     page += '<p>スコアは投球らしさのモデル出力で、ファウル確率ではありません。表示の消失はYOLOの見落としの場合もあります。推定結果は動画で確認してください。</p>'
     page += '<p><a href="scoreboard.csv" download>全スコアボードCSV</a><a href="foul_candidates.csv" download>ファウル候補CSV</a><a href="gate_decisions.csv" download>対象・除外の理由</a><a href="annotation_review/review.csv" download>追加注釈の確認表</a></p>'
+    page += '<p>全スコアボードCSVには未検出・不整合時に保持した直前値を含みます。<a href="rules/review.html">補正前後・保留理由・評価表</a>で新しい観測と区別できます。保持値だけではBSO不変の条件を満たしません。</p>'
     page += '<p>青は正解区間ではなくVideoMAEの入力範囲です。走者の灰色は空塁という予測で、未検出との区別には確認が必要です。</p><img src="timeline.png" alt="対象区間・投球候補・BSO・走者・得点の時系列グラフ">'
     (out/'gate_timeline.svg').write_text(''.join(lines),encoding='utf-8')
     page += '<p>手元の元動画を選択すると、各場面へ移動できます（動画はアップロードされません）。</p><input id="file" type="file" accept="video/*"><video id="video" controls></video>'

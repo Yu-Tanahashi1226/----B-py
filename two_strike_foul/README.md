@@ -1,5 +1,7 @@
 # 2ストライク後のファウル候補だけにVideoMAEを使う統合プログラム
 
+**2026年11月12日：野球ルールに反する読取りの保留、補正前後CSV、正解表による適合率・再現率の比較を追加しました。[保存済み結果だけで確認する手順](RULE_VALIDATION.md)。**
+
 **更新：10本の参考場面をtest.mp4から探してMP4へ書き出し、BSO・VideoMAEで確認する新モードを追加しました。[新しい実行手順はこちら](REFERENCE_EXTRACTION.md)。** 以下は、比較・再現用に残した旧「表示が消えて再表示」モードの手順です。
 
 動画全体からYOLOでスコアボードを検出し、2段階目のYOLOでB/S/Oの点灯ランプと走者を読み、PaddleOCRで回・表裏・チーム名・得点を記録します。その後、スコアボードの消失・再表示を調べ、**消失前が2ストライク、再表示後もBSO不変**の場面だけをVideoMAE＋既存Compact ActionFormerへ渡します。
@@ -13,8 +15,9 @@ flowchart TD
  A[元動画全体] --> B[YOLO: スコアボード検出]
  B --> C[内部YOLO: BSO・走者]
  B --> D[PaddleOCR: 回・表裏・チーム名・得点]
- C --> E[消失前と再表示後の安定した表示を比較]
- D --> E
+ C --> R[野球ルールで確認。未検出・不整合は直前値を保持]
+ D --> R
+ R --> E[新しく確認できた前後の安定した表示を比較]
  E -->|2ストライク・BSO不変| F[その場面だけVideoMAE特徴抽出]
  E -->|変化あり・不明| G[記録・保留。VideoMAEへ渡さない]
  F --> H[Compact ActionFormerで投球区間を検出]
@@ -133,7 +136,8 @@ python run_foul_pipeline.py --config config.local.json --video "..\test.mp4" --o
 |---|---|
 | `index.html` | 対象区間、投球スコア、前後画像、元動画への移動 |
 | `timeline.png` | 対象範囲・投球候補・BSO・走者・得点を並べたグラフ。青は正解ではなく適用範囲 |
-| `scoreboard.csv` | 全時刻のBSO・走者・回・表裏・チーム名・得点。不明は空欄 |
+| `scoreboard.csv` | 全時刻の記録状態。保持値を含むため `held_fields` と併せて確認。不明は空欄 |
+| `rules/` | 補正前後・保留理由のCSV、正解入力表、状態認識の適合率・再現率。正解がなければ未評価 |
 | `gate.json` / `gate_decisions.csv` | 表示の消失・再表示、前後の安定値、対象／除外の理由 |
 | `foul_candidates.csv` / `events.json` | ファウル推定と投球検出区間。比較用の投球は別のrole |
 | `pitch_proposals.csv` | 対象範囲内の全投球候補。重複した低スコア候補も保存 |

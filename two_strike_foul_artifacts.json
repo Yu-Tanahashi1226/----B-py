@@ -1,7 +1,7 @@
 {
   "two_strike_foul_program.zip": {
-    "bytes": 16652433,
-    "sha256": "96d78c6aaad10ab8ef6c95ef1704ecbca6f0f5c699c0eb70e3a033b5191886d8"
+    "bytes": 16675541,
+    "sha256": "f7be5de2e8110374e14d026c70484141d2265e23c7693a7a1000f09dc07fb149"
   },
   "compact_actionformer_weights.zip": {
     "bytes": 14555432,
@@ -14,5 +14,13 @@
   "reference_extraction_example.zip": {
     "bytes": 35557614,
     "sha256": "07ff78b61f098ada3072e36281886df35ddbe281b9beee7df078473844d33d69"
+  },
+  "two_strike_foul_rules_update.zip": {
+    "bytes": 49161,
+    "sha256": "e768388da527ed0e9a388bd955dd56ce11dc35d4c3282e2f87a5b3fd45cde694"
+  },
+  "scoreboard_rule_results_20261112.zip": {
+    "bytes": 361909,
+    "sha256": "9acd7c216f371e924ddc7fc78b61ee04074d054f9d1e2b4f0ce89ab127bb0403"
   }
 }

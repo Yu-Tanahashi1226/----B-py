@@ -1,0 +1,82 @@
+{
+  "videos": 10,
+  "observations": 762,
+  "rejected_frames": 30,
+  "rejected_field_readings": 47,
+  "original_outputs_unchanged": true,
+  "automatic_tests_passed": 60,
+  "ground_truth_scope": "One previously visually verified failure frame only; not an unbiased accuracy benchmark.",
+  "test_mp4_run": false,
+  "sources": [
+    {
+      "video": "1urafaul1.mp4",
+      "observations": 42,
+      "rejected_field_readings": 8,
+      "rejected_frames": 4,
+      "evaluation_status": "not_evaluated"
+    },
+    {
+      "video": "2omotefaul2.mp4",
+      "observations": 129,
+      "rejected_field_readings": 10,
+      "rejected_frames": 5,
+      "evaluation_status": "evaluated"
+    },
+    {
+      "video": "2urafaul3.mp4",
+      "observations": 52,
+      "rejected_field_readings": 8,
+      "rejected_frames": 4,
+      "evaluation_status": "not_evaluated"
+    },
+    {
+      "video": "4omotefaul4.mp4",
+      "observations": 116,
+      "rejected_field_readings": 0,
+      "rejected_frames": 0,
+      "evaluation_status": "not_evaluated"
+    },
+    {
+      "video": "4urafaul5.mp4",
+      "observations": 44,
+      "rejected_field_readings": 4,
+      "rejected_frames": 4,
+      "evaluation_status": "not_evaluated"
+    },
+    {
+      "video": "5omotefaul6.mp4",
+      "observations": 56,
+      "rejected_field_readings": 0,
+      "rejected_frames": 0,
+      "evaluation_status": "not_evaluated"
+    },
+    {
+      "video": "5omotefaul7.mp4",
+      "observations": 109,
+      "rejected_field_readings": 0,
+      "rejected_frames": 0,
+      "evaluation_status": "not_evaluated"
+    },
+    {
+      "video": "5urafaul8.mp4",
+      "observations": 115,
+      "rejected_field_readings": 17,
+      "rejected_frames": 13,
+      "evaluation_status": "not_evaluated"
+    },
+    {
+      "video": "7urafaul9.mp4",
+      "observations": 51,
+      "rejected_field_readings": 0,
+      "rejected_frames": 0,
+      "evaluation_status": "not_evaluated"
+    },
+    {
+      "video": "8urafaul10.mp4",
+      "observations": 48,
+      "rejected_field_readings": 0,
+      "rejected_frames": 0,
+      "evaluation_status": "not_evaluated"
+    }
+  ]
+}

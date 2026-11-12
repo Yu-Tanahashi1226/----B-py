@@ -23,6 +23,8 @@ def presence(row):
 
 
 def signature(row):
+    if row.get('rule_validation', {}).get('count_comparison_allowed') is False:
+        return None
     value = row.get('count')
     if not value or presence(row) != 'visible':
         return None
@@ -57,10 +59,11 @@ def summarize(run):
     result = dict(zip(COUNT_KEYS, signature(run[0])))
     result.update(first_sec=run[0]['time_sec'], last_sec=run[-1]['time_sec'], support=len(run))
     for key in CONTEXT_KEYS:
+        trusted = [r for r in run if r.get('rule_validation', {}).get('fields', {}).get(key, {}).get('status', 'observed') in ('observed', 'cached')]
         if key.startswith('runner_'):
-            values = [(r.get('runners') or {}).get(key[7:]) for r in run]
+            values = [(r.get('runners') or {}).get(key[7:]) for r in trusted]
         else:
-            values = [(r.get('scoreboard') or {}).get(key) for r in run]
+            values = [(r.get('scoreboard') or {}).get(key) for r in trusted]
         known = [value for value in values if value is not None]
         result[key] = known[0] if known and all(v == known[0] for v in known) else None
     return result

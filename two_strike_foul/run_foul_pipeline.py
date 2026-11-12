@@ -7,8 +7,9 @@ import subprocess
 import sys
 import time
 
-from common import read_jsonl, save_json, sha256
+from common import save_json, sha256
 from gating import make_gate
+from scoreboard_rule_report import run_validation
 
 ROOT = Path(__file__).resolve().parent
 
@@ -104,7 +105,8 @@ def execute(job, resume=False, stop_after=None):
     job_path = str(output / 'job.json')
     stage(job, 'yolo', 'scoreboard_worker.py', ['yolo', job_path], env, resume)
     stage(job, 'ocr', 'scoreboard_worker.py', ['ocr', job_path], env, resume)
-    rows = read_jsonl(output / 'observations.jsonl')
+    rows = run_validation(job)
+    print(f'野球ルール確認: {output / "rules" / "review.html"}', flush=True)
     gate = make_gate(rows, job['fps'], job['frames'], job['config']['sample_period_sec'], job['config']['gate'])
     save_json(output / 'gate.json', gate)
     print(f'条件に一致: {gate["selected_episodes"]}場面 / VideoMAE対象: {len(gate["windows"])}区間', flush=True)

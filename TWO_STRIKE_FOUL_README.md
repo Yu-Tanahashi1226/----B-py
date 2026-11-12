@@ -1,5 +1,10 @@
 # 参考10場面をtest.mp4から自動で切り出し、BSO・VideoMAEで確認する
 
+**11月12日更新：野球ルールによる読取りの保留と、補正前後・適合率・再現率の表を追加しました。[実行手順](two_strike_foul/RULE_VALIDATION.md)。保存済みtest.mp4の観測だけで再確認でき、YOLO・OCRの再実行は不要です。**
+
+- [既存プログラム用の小さい更新ZIP](two_strike_foul_rules_update.zip)（設定・重みは含まず、既存の `config.local.json` を維持）
+- [参考10動画での確認表ZIP](scoreboard_rule_results_20261112.zip)（解凍して `index.html` を開く。全体の精度は未評価）
+
 - [更新したプログラムZIP](two_strike_foul_program.zip)
 - [Compact ActionFormer重みだけのZIP](compact_actionformer_weights.zip)
 - [新しい実行手順](two_strike_foul/REFERENCE_EXTRACTION.md)
