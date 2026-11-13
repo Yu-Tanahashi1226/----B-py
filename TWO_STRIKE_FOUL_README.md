@@ -1,5 +1,11 @@
 # 参考10場面をtest.mp4から自動で切り出し、BSO・VideoMAEで確認する
 
+**11月13日：YOLO・OCR・VideoMAEの結果の隣に目視の正解を入力できる確認ページを追加しました。**
+
+- [目視入力ページ用の更新ZIP](two_strike_foul_review_update.zip)
+- [作成・入力の手順](two_strike_foul/MANUAL_REVIEW.md)
+- [実動画5uraの確認ページ例ZIP](manual_review_example_20261113.zip)（正解欄は空欄）
+
 **11月12日更新：野球ルールによる読取りの保留と、補正前後・適合率・再現率の表を追加しました。[実行手順](two_strike_foul/RULE_VALIDATION.md)。保存済みtest.mp4の観測だけで再確認でき、YOLO・OCRの再実行は不要です。**
 
 - [既存プログラム用の小さい更新ZIP](two_strike_foul_rules_update.zip)（設定・重みは含まず、既存の `config.local.json` を維持）

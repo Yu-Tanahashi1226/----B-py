@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>検出結果と目視正解の入力</title>
+<style>
+body{font:16px/1.6 system-ui,sans-serif;margin:0;color:#172a3b;background:#f5f7fa}header,main{padding:18px 24px}h1{font-size:25px;margin:0}h2{font-size:21px}p{margin:8px 0}button,select,input{font:inherit}button{padding:7px 12px;cursor:pointer;margin:3px}select,input{padding:5px}input[type=number]{width:90px}input[type=text]{width:130px}video{width:100%;max-width:800px;max-height:360px;background:#111}.toolbar{position:sticky;top:0;background:white;border-bottom:1px solid #ccd5df;padding:10px 20px;z-index:3}.scroll{overflow:auto;max-height:65vh;background:white;border:1px solid #c7d1dc}table{border-collapse:separate;border-spacing:0;width:100%}th,td{padding:7px 10px;border-right:1px solid #dce2e8;border-bottom:1px solid #dce2e8;white-space:nowrap;vertical-align:top}thead th{position:sticky;top:0;background:#eaf0f7;z-index:1}td.manual,th.manual{background:#fff6dc}.muted,small{color:#526579}small{display:block;white-space:normal;max-width:140px}article{padding:16px;margin:16px 0;background:white;border:1px solid #ccd5df;border-radius:7px}.held{color:#935b00}.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.notice{padding:12px;background:#eaf3fc}#state-pagination{margin:12px 0}#save-status{font-size:14px}#import-status{color:#254e77}.model-table{margin-top:14px}.model-table th{position:static}input[aria-invalid=true]{outline:2px solid #b31521}button[aria-pressed=true]{background:#173f6e;color:white;border-color:#173f6e}details{margin:10px 0}.field-note{width:260px!important}
+</style>
+<header><h1>検出結果の隣に目視の正解を入力</h1><p id="source"></p>
+<p>白い欄に検出結果、黄色い欄に目視の正解を並べています。未確認は空欄、実際に0なら0を入力してください。</p>
+<p class="muted">VideoMAE欄は保存済みの解析結果です。この確認ページを作る処理では、VideoMAEの対象選択や推論を再実行しません。</p>
+<details><summary>表と入力の説明</summary><p>読取り＝YOLO・PaddleOCRの出力、補正後＝野球ルールを適用した記録値です。「保持」は過去の値を引き継いだ推定です。VideoMAEの投球スコアと試作ファウルスコアは別々に示します。モデル未実行・未出力は判定結果を作らず表示します。</p><p>投球前後の表は、実際に観測した代表フレームを表示します。前後の時刻が不明な場合は全時刻表で確認してください。投球一覧だけでは一覧外の見逃しを評価できないため、動画全体のファウル再現率とは区別します。</p></details>
+<label>手元の元動画を選ぶ <input id="video-file" type="file" accept="video/*"></label>
+<video id="video" controls preload="metadata"></video><p id="video-status" class="muted">元動画を選ぶと各行の時刻へ移動できます。動画はこのパソコン内で再生します。</p>
+</header>
+<div class="toolbar"><div class="actions">
+<button id="show-pitches" type="button">投球ごと：全モデル＋目視</button><button id="show-states" type="button">全時刻：YOLO・OCR＋目視</button>
+<button id="save-states" type="button">スコアボードCSV保存</button><button id="save-pitches" type="button">投球CSV保存</button>
+<label>入力済みCSVを読み込む <input id="import-csv" type="file" accept=".csv,text/csv"></label>
+</div><p id="save-status">入力後はCSV保存ボタンでファイルへ保存してください。</p><p id="import-status" role="status"></p></div>
+<main>
+<section id="pitches"><h2>投球ごとの確認</h2><div id="pitch-list"></div></section>
+<section id="states" hidden><h2>全時刻のスコアボード</h2>
+<div class="actions"><label>表示項目 <select id="field-group"><option value="counts">BSO</option><option value="runners">走者・表示有無</option><option value="text">文字情報</option><option value="all">すべて</option></select></label>
+<label>開始秒 <input id="from-sec" type="number" min="0" step="0.1"></label><label>終了秒 <input id="to-sec" type="number" min="0" step="0.1"></label><button id="apply-range" type="button">範囲を表示</button></div>
+<div id="state-pagination"><button id="previous" type="button">前の50行</button><span id="page-label"></span><button id="next" type="button">次の50行</button></div>
+<div class="scroll"><table id="state-table"></table></div>
+</section>
+</main>
+<!--REVIEW_DATA-->
+<!--REVIEW_SCRIPT-->
+</html>

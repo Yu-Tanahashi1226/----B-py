@@ -66,6 +66,8 @@ def analyze(job,matches,source,ffmpeg):
             export_clip(job['video'],candidates/name,max(0,event['model_start_sec']-1),min(source['duration_sec'],event['model_end_sec']+4),ffmpeg,source['source_sha256'])
             event['candidate_clip']='foul_candidates/'+name
     save_json(output/'events.json',results)
+    from make_manual_review import generate_review
+    generate_review(output)
     flat=[]
     for event in results:
         row={k:v for k,v in event.items() if k not in ['count_gate']}
@@ -88,7 +90,7 @@ def analyze(job,matches,source,ffmpeg):
                                  **{'runner_'+k:(row.get('runners') or {}).get(k) for k in ['first','second','third']},
                                  **{k:(row.get('scoreboard') or {}).get(k) for k in ['inning','half','upper_team','lower_team','upper_score','lower_score']}))
     text='<meta charset="utf-8"><style>body{font:17px/1.7 sans-serif;margin:30px}td,th{padding:8px;border:1px solid #ccc}table{border-collapse:collapse}video{max-width:750px;width:100%}</style><h1>BSOとVideoMAEの確認</h1><p>映像照合で投球時刻の候補を求め、2ストライク・BSO不変のものだけVideoMAEに渡しました。投球スコアと試作ファウル判別スコアを分けて表示します。どちらもファウルの確定判定ではありません。</p><p><a href="analysis.csv">投球別CSV</a> / <a href="scoreboard.csv">BSO・走者・文字情報CSV</a> / <a href="scoreboard/annotation_review/review.csv">注釈確認表</a></p><table><tr><th>参考場面</th><th>投球</th><th>判定</th><th>投球スコア</th><th>試作ファウルスコア</th></tr>'
-    text=text.replace('<table><tr>', '<p>スコアボードCSVには未検出・不整合時に保持した直前値を含みます。<a href="scoreboard/rules/review.html">野球ルールによる補正前後・保留理由・評価表</a>で新しい観測と区別できます。保持値だけではBSO不変の条件を満たしません。</p><table><tr>',1)
+    text=text.replace('<table><tr>', '<p><a href="manual_review/index.html">検出結果の隣に目視の正解を入力する</a></p><p>スコアボードCSVには未検出・不整合時に保持した直前値を含みます。<a href="scoreboard/rules/review.html">野球ルールによる補正前後・保留理由・評価表</a>で新しい観測と区別できます。保持値だけではBSO不変の条件を満たしません。</p><table><tr>',1)
     for event in results:
         text+='<tr>'+''.join('<td>'+html.escape(str(event.get(k,'')))+'</td>' for k in ['reference','pitch_index','status','pitch_model_score','foul_model_score'])+'</tr>'
     text+='</table>'

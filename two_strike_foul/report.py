@@ -220,6 +220,8 @@ def run(job):
     save_json(output / 'summary.json', summary)
     from plot_timeline import plot
     plot(job, rows, gate, proposals)
+    from make_manual_review import generate_review
+    generate_review(output)
     make_html(job, rows, gate, events, summary)
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
@@ -268,6 +270,7 @@ def make_html(job, rows, gate, events, summary):
         page += '<ul>'+''.join(f'<li>{n["start_sec"]:.2f}〜{n["end_sec"]:.2f}秒：{notes[n["reason"]]}</li>' for n in gate['visibility_notes'])+'</ul>'
     page += '<p>スコアは投球らしさのモデル出力で、ファウル確率ではありません。表示の消失はYOLOの見落としの場合もあります。推定結果は動画で確認してください。</p>'
     page += '<p><a href="scoreboard.csv" download>全スコアボードCSV</a><a href="foul_candidates.csv" download>ファウル候補CSV</a><a href="gate_decisions.csv" download>対象・除外の理由</a><a href="annotation_review/review.csv" download>追加注釈の確認表</a></p>'
+    page += '<p><a href="manual_review/index.html">検出結果の隣に目視の正解を入力する</a></p>'
     page += '<p>全スコアボードCSVには未検出・不整合時に保持した直前値を含みます。<a href="rules/review.html">補正前後・保留理由・評価表</a>で新しい観測と区別できます。保持値だけではBSO不変の条件を満たしません。</p>'
     page += '<p>青は正解区間ではなくVideoMAEの入力範囲です。走者の灰色は空塁という予測で、未検出との区別には確認が必要です。</p><img src="timeline.png" alt="対象区間・投球候補・BSO・走者・得点の時系列グラフ">'
     (out/'gate_timeline.svg').write_text(''.join(lines),encoding='utf-8')

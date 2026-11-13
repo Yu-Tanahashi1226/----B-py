@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "observations": 146,
+  "events": 3,
+  "automatic_browser_save": true,
+  "tests": [
+    "editable paired inputs",
+    "CSV export",
+    "CSV import",
+    "source identity rejection",
+    "reload recovery",
+    "frame/pitch label synchronization",
+    "range and field filters"
+  ],
+  "synthetic_labels_not_ground_truth": true
+}
